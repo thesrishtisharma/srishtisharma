@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "srishti-sharma"
+  },
+  "targets": {
+    "srishti-sharma": {
+      "hosting": {
+        "Portfolio": [
+          "srishti-sharma"
+        ]
+      }
+    }
+  }
+}

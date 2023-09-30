@@ -1,0 +1,78 @@
+#myWork{
+    background-color: #efefef;
+}
+
+.container{
+    padding: 2%;
+    font-family: Georgia, sans-serif;
+    color: #01245e;
+    font-weight: bolder;
+}
+
+h4{
+    text-align: center;
+}
+
+.card{
+    border-radius: 10%;
+    padding: 1%;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.btn{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5%;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.btn1{
+    background-image: linear-gradient(to right, #453a93 0%, #e3bcfe 51%, #4144a3 100%);
+}
+
+.btn:hover {
+    background-position: right center; /* change the direction of the change here */
+}
+
+.card-title{
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 1px solid midnightblue;
+    padding-bottom: 10px;
+    margin-bottom: 5%;
+}
+
+.card-text{
+    font-weight: lighter;
+}
+
+#projectsBar div{
+    display: inline-block;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    white-space: normal;
+}
+
+#btnContainer{
+    text-align: center;
+    align-content: center;
+}
+
+#projectsBar {
+    padding-bottom: 2%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
