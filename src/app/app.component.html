@@ -90,7 +90,7 @@
                             folder_open
                         </span>
         
-                        <a target="_blank" href="{{project.ref}}">
+                        <a target="_blank" href="{{project.ref}}" *ngIf="project.ref != '#'">
                             <span id="open-link" class="material-symbols-outlined">
                                 ungroup
                             </span>
