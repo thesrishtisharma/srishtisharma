@@ -3,7 +3,7 @@
 <div id="{{mode}}" style="scroll-behavior: smooth;">
     <!-- navbar -->
     <div @fade id="navBar" style="background-color: {{navbarColor}};">
-        <ul style="background-color: {{navbarColor}};">
+        <ul [style.background-color]="navbarColor">
             <li style="float:left">
                 <a class="logo-anchor" href="#summary"><img id="logo" src="../assets/images/logo/{{logo_image}}"></a>
             </li>
@@ -13,8 +13,9 @@
                 [checked]="checked"
                 [disabled]="disabled">
             </mat-slide-toggle></li>
-            <li><a href="#work" style="color:{{navbarText}};">Work</a></li>
-            <li><a href="#experience" style="color:{{navbarText}};">Experience</a></li>
+            <!-- <li><a href="#contact" [style.color]="navbarText">Contact</a></li> -->
+            <li><a href="#work" [style.color]="navbarText">Work</a></li>
+            <li><a href="#experience" [style.color]="navbarText">Experience</a></li>
         </ul>
     </div>
 
@@ -81,7 +82,7 @@
     <div @slideY class="container" id="work">
         <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Key Projects</h2>
 
-        <div id="projects_container" class="row" *ngFor="let row of projectsBar">
+        <div class="container" id="projects_container" class="row" *ngFor="let row of projectsBar">
             <div id="project" class="col-sm" *ngFor="let project of row.data">
                 <div class="container">
                     <div id="icons">
@@ -89,7 +90,7 @@
                             folder_open
                         </span>
         
-                        <a target="_blank" href="{{project.ref}}">
+                        <a target="_blank" href="{{project.ref}}" *ngIf="project.ref != '#'">
                             <span id="open-link" class="material-symbols-outlined">
                                 ungroup
                             </span>
@@ -107,5 +108,10 @@
         </div>
     </div>
 
+    <!--  Contact  -->
+    <!-- <div @slideY class="container" id="contact">
+        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Contact Me</h2>
+
+    </div> -->
     <router-outlet></router-outlet>
 </div>
