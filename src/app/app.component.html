@@ -1,2 +1,111 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div id="{{mode}}" style="scroll-behavior: smooth;">
+    <!-- navbar -->
+    <div @fade id="navBar" style="background-color: {{navbarColor}};">
+        <ul style="background-color: {{navbarColor}};">
+            <li style="float:left">
+                <a class="logo-anchor" href="#summary"><img id="logo" src="../assets/images/logo/{{logo_image}}"></a>
+            </li>
+            <li><mat-slide-toggle id="dark-mode-toggle"
+                #darkModeSwitch
+                (change)="changeTheme()"
+                [checked]="checked"
+                [disabled]="disabled">
+            </mat-slide-toggle></li>
+            <li><a href="#work" style="color:{{navbarText}};">Work</a></li>
+            <li><a href="#experience" style="color:{{navbarText}};">Experience</a></li>
+        </ul>
+    </div>
+
+    <!--    About me    -->
+    <div @slideY class="container" id="summary">
+        <div id="left">
+            <p>
+                <span id="s1" style="color: {{s1TextColor}}">Hey there, my name is</span>  <br>
+                <span id="name" style="color: {{nameTextColor}}"><b>Srishti Sharma</b>.</span>    <br><br>
+                <span id="dsc" style="color: {{dscTextColor}}">I build things for the web.</span>     <br><br>
+                <span id="s4" style="color: {{s4TextColor}}">
+                    I am a Software Engineer - proficient in designing, implementing and maintaining web applications while 
+                    collaborating with cross functional teams to deliver high quality solutions. Currently, I am focused on growing my 
+                    career journey with <b><span style="color: {{nameTextColor}};">IBM</span></b>.
+                </span>
+            </p>
+            <br>
+            <section id="social_handles">
+                <a target="_blank" href="https://www.linkedin.com/in/the-srishti-sharma/">
+                    <img class="social" src="../assets/images/linkedin.png">
+                </a>
+                <a target="_blank" href="https://github.com/thesrishtisharma">
+                    <img class="social" src="../assets/images/github.png">
+                </a>
+                <a target="_blank" href="https://www.instagram.com/thesrishtisharma/">
+                    <img class="social" src="../assets/images/instagram (1).png">
+                </a>
+                <a target="_blank" href="https://t.me/thesrishtisharma">
+                    <img class="social" src="../assets/images/telegram.png">
+                </a>
+            </section>
+        </div>
+        <div id="right">
+            <section id="img_container">
+                <img src="../assets/images/FormalPicture.png">
+            </section>
+        </div>
+    </div>
+    
+    <!--   Experience   -->
+    <div @slideY class="container" id="experience">
+        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Work Experience</h2>
+        <div id="experience-tab">
+            <div id="company-name">
+                <ol>
+                    <li *ngFor="let data of experience_data" 
+                        [style.color]="nameTextColor"
+                        [class.active]="selectedExperience?.name === data.name && selectedExperience?.timeline === data.timeline" 
+                        (click)="showExperience(data.name, data.timeline)">
+                        <b>{{data.name}}</b> &nbsp; &nbsp; <span style="color: #8892b0"> | &nbsp; &nbsp; {{data.timeline}} </span>
+                    </li>
+                </ol>
+            </div>
+            <div id="experience">
+                <!--Render Current Company Experience-->
+                <h5 [style.color]="navbarText">{{loadExperience.role}} <span [style.color]="nameTextColor"> @ {{loadExperience.name}}</span> </h5>
+                <p style="color: #8892b0">{{loadExperience.timeline}}</p>
+                <p [style.color]="s4TextColor" [innerHTML]="loadExperience.desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!--   Work   -->
+    <div @slideY class="container" id="work">
+        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Key Projects</h2>
+
+        <div id="projects_container" class="row" *ngFor="let row of projectsBar">
+            <div id="project" class="col-sm" *ngFor="let project of row.data">
+                <div class="container">
+                    <div id="icons">
+                        <span id="folder-icon" class="material-symbols-outlined">
+                            folder_open
+                        </span>
+        
+                        <a target="_blank" href="{{project.ref}}">
+                            <span id="open-link" class="material-symbols-outlined">
+                                ungroup
+                            </span>
+                        </a>
+                    </div>
+                    <br>
+                    <div id="project-content">
+                        <h5 [style.color]="nameTextColor">{{project.name}}</h5>
+                        <hr [style.background-color]="navbarText">
+                        <p style="color: #8892b0">{{project.desc}}</p>
+                        <p [style.color]="s4TextColor"><i><b>Skills: </b>{{project.skills}}</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>
