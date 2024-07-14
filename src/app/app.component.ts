@@ -45,7 +45,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   experience_data = [
     {
       name: "IBM", 
-      role: "Application Developer", 
+      role: "Software Engineer", 
       timeline: "Jan 24 – Present",
       desc: "• Design, develop, maintain microservices, front-end for the applications <br>• Managing database, and maintaining code versions using Git <br>• Creating unit test cases to test functionalities of the modules <br>• Preparing HLDs and LLDs, and API Integrations <br>• Automating front-end – using robot framework <br>• Skills used: Java, Spring Boot, Angular, Robot framework, Git, SQL, Rest APIs, Swagger  <br>• Clients included: Daimler trucks innovation center India (DTICI)"
     },
@@ -62,7 +62,7 @@ export class AppComponent implements AfterViewInit, OnInit{
       desc: "• Handling technical escalations with respect to server issues <br>• Providing root cause analysis for any issue that is caused in hardware as well as software <br>• Skills used: Linux, Shell scripting, Communication, CAS Storage <br>• Clients included: Dell EMC"
     },
     {
-      name: "Ministry of Statistics & Programme Impl", 
+      name: "MoSPI", 
       role: "Web Development Intern", 
       timeline: "June 18 – Aug 18",
       desc: "• Revamping existing UI to the new defined one <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "

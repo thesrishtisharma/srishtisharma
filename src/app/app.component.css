@@ -56,7 +56,7 @@
     z-index: 1 !important;
 }
 
-ul {
+#navUl {
     z-index: 1 !important;
     list-style-type: none;
     margin: 0;
@@ -68,18 +68,18 @@ ul {
     border-bottom: 1px solid darkslategrey;
 }
 
-ul li {
+#navUl li {
     float: right;
 }
 
-ul li a:not(.logo-anchor), ul li #dark-mode-toggle{
+#navUl li a:not(.logo-anchor), ul li #dark-mode-toggle{
     display: block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-ul li a:hover{
+#navUl li a:hover{
     text-decoration: underline;
 }
 
@@ -102,16 +102,6 @@ span.material-icons{
 #light #experience-tab #experience{
     border: 1px solid #ccd6f6;
 }  
-
-#dark #company-name .active{
-    background-color: #112240;
-    border-left: 5px solid #64ffda;
-}
-
-#light #company-name .active{
-    background-color: #DFEBF9;
-    border-left: 5px solid saddlebrown;
-}
 
 #dark ol li:hover{
     background-color: #233554;
@@ -223,11 +213,21 @@ span.material-icons{
         border-radius: 20px;
     }
     
-    ol li{
+    #expList li{
         display: block;
         cursor: pointer;
         padding: 8px 8px 8px 12px;
         border-radius: 10px;
+    }
+
+    #dark #company-name .active{
+        background-color: #112240;
+        border-left: 5px solid #64ffda;
+    }
+    
+    #light #company-name .active{
+        background-color: #DFEBF9;
+        border-left: 5px solid saddlebrown;
     }
 }
 
@@ -285,11 +285,21 @@ span.material-icons{
         border-radius: 20px;
     }
 
-    ol li{
+    #expList li{
         display: block;
         cursor: pointer;
         padding: 8px 8px 8px 12px;
         border-radius: 10px;
+    }
+
+    #dark #company-name .active{
+        background-color: #112240;
+        border-left: 5px solid #64ffda;
+    }
+    
+    #light #company-name .active{
+        background-color: #DFEBF9;
+        border-left: 5px solid saddlebrown;
     }
 }
 
@@ -337,36 +347,64 @@ span.material-icons{
         height: 150px !important;
     }
 
-    #experience-tab{
-        display: flex;
-        justify-content: space-between;
-        padding: 1%;
-    }
-
-    #experience-tab #company-name{
-        width: 35%;
-    }
-    
-    #experience-tab #experience{
-        width: 60%;
-        margin-left: 1%;
-        padding: 3%;
-        border-radius: 20px;
-    }
-
+    /** Experience Div **/
     #experience h5{
         font-size: 14px;
     }
 
     #experience p{
         font-size: 12px;
+    } 
+
+    #expList{
+        white-space: nowrap;
+        overflow-x: scroll;
+        padding: 0;
     }
 
-    ol li{
-        display: block;
+    #expList li{
+        display: inline-block;
         cursor: pointer;
-        padding: 8px 8px 8px 12px;
+        padding: 8px;
         border-radius: 10px;
         font-size: 12px;
+        max-width: 25%;
+        white-space: normal;
+        margin-left: 1%;
+        margin-top: 1%;
+        text-align: center;
+        vertical-align: middle;
+        min-height: 70px;
+        max-height: 70px;
+    }
+
+    #dark #expList li{
+        border-left: 1px solid #64ffda;
+        border-right: 1px solid #64ffda;
+    }
+
+    #light #expList li{
+        border-left: 1px solid saddlebrown;
+        border-right: 1px solid saddlebrown;
+    }
+
+    #experience{
+        padding: 4%;
+        border-radius: 20px;
+    }
+
+    #dark #company-name .active{
+        background-color: #112240;
+        border-bottom: 5px solid #64ffda;
+    }
+    
+    #light #company-name .active{
+        background-color: #DFEBF9;
+        border-bottom: 5px solid saddlebrown;
+    }
+
+    /** WORK */
+    #projects_container{
+        margin-left: 3%;
     }
 }

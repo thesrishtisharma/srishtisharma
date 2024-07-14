@@ -3,7 +3,7 @@
 <div id="{{mode}}" style="scroll-behavior: smooth;">
     <!-- navbar -->
     <div @fade id="navBar" style="background-color: {{navbarColor}};">
-        <ul [style.background-color]="navbarColor">
+        <ul id="navUl" [style.background-color]="navbarColor">
             <li style="float:left">
                 <a class="logo-anchor" href="#summary"><img id="logo" src="../assets/images/logo/{{logo_image}}"></a>
             </li>
@@ -60,14 +60,14 @@
         <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Work Experience</h2>
         <div id="experience-tab">
             <div id="company-name">
-                <ol>
+                <ul id="expList">
                     <li *ngFor="let data of experience_data" 
                         [style.color]="nameTextColor"
                         [class.active]="selectedExperience?.name === data.name && selectedExperience?.timeline === data.timeline" 
                         (click)="showExperience(data.name, data.timeline)">
                         <b>{{data.name}}</b> &nbsp; &nbsp; <span style="color: #8892b0"> | &nbsp; &nbsp; {{data.timeline}} </span>
                     </li>
-                </ol>
+                </ul>
             </div>
             <div id="experience">
                 <!--Render Current Company Experience-->
@@ -111,7 +111,10 @@
     <!--  Contact  -->
     <!-- <div @slideY class="container" id="contact">
         <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Contact Me</h2>
-
+        <br>
+        <div class="container">
+            
+        </div>
     </div> -->
     <router-outlet></router-outlet>
 </div>
