@@ -23,13 +23,13 @@
     <div @slideY class="container" id="summary">
         <div id="left">
             <p>
-                <span id="s1" style="color: {{s1TextColor}}">Hey there, my name is</span>  <br>
-                <span id="name" style="color: {{nameTextColor}}"><b>Srishti Sharma</b>.</span>    <br><br>
-                <span id="dsc" style="color: {{dscTextColor}}">I build things for the web.</span>     <br><br>
-                <span id="s4" style="color: {{s4TextColor}}">
+                <span id="s1" [style.color]="s1TextColor">Hey there, my name is</span>  <br>
+                <span id="name" [style.color]="nameTextColor"><b>Srishti Sharma</b>.</span>    <br><br>
+                <span id="dsc" [style.color]="dscTextColor">I build things for the web.</span>     <br><br>
+                <span id="s4" [style.color]="s4TextColor">
                     I am a Software Engineer - proficient in designing, implementing and maintaining web applications while 
                     collaborating with cross functional teams to deliver high quality solutions. Currently, I am focused on growing my 
-                    career journey with <b><span style="color: {{nameTextColor}};">IBM</span></b>.
+                    career journey with <b><span [style.color]="nameTextColor">IBM</span></b>.
                 </span>
             </p>
             <br>
@@ -63,17 +63,28 @@
                 <ul id="expList">
                     <li *ngFor="let data of experience_data" 
                         [style.color]="nameTextColor"
-                        [class.active]="selectedExperience?.name === data.name && selectedExperience?.timeline === data.timeline" 
-                        (click)="showExperience(data.name, data.timeline)">
-                        <b>{{data.name}}</b> &nbsp; &nbsp; <span style="color: #8892b0"> | &nbsp; &nbsp; {{data.timeline}} </span>
+                        [class.active]="selectedExperience.name === data.name" 
+                        (click)="showExperience(data.name)">
+                        <b>{{data.name}}</b>
                     </li>
                 </ul>
             </div>
             <div id="experience">
-                <!--Render Current Company Experience-->
-                <h5 [style.color]="navbarText">{{loadExperience.role}} <span [style.color]="nameTextColor"> @ {{loadExperience.name}}</span> </h5>
-                <p style="color: #8892b0">{{loadExperience.timeline}}</p>
-                <p [style.color]="s4TextColor" [innerHTML]="loadExperience.desc"></p>
+                <div *ngFor="let x of loadExperience.data">
+                    <!--Render Current Company Experience-->
+                    <h5 [style.color]="navbarText">
+                        {{x.role}} 
+                        <span [style.color]="nameTextColor"> 
+                            @ 
+                            <a [href]="loadExperience.href" style="text-decoration: none;" [style.color]="nameTextColor"> 
+                                {{loadExperience.name}}
+                            </a>
+                        </span> 
+                    </h5>
+                    <p style="color: #8892b0">{{x.timeline}}</p>
+                    <p [style.color]="s4TextColor" [innerHTML]="x.desc"></p>
+                    <br *ngIf="loadExperience.data.length > 1">
+                </div>
             </div>
         </div>
     </div>

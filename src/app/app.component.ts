@@ -45,30 +45,41 @@ export class AppComponent implements AfterViewInit, OnInit{
   experience_data = [
     {
       name: "IBM", 
-      role: "Software Engineer", 
-      timeline: "Jan 24 – Present",
-      desc: "• Design, develop, maintain microservices, front-end for the applications <br>• Managing database, and maintaining code versions using Git <br>• Creating unit test cases to test functionalities of the modules <br>• Preparing HLDs and LLDs, and API Integrations <br>• Automating front-end – using robot framework <br>• Skills used: Java, Spring Boot, Angular, Robot framework, Git, SQL, Rest APIs, Swagger  <br>• Clients included: Daimler trucks innovation center India (DTICI)"
+      href: "https://www.ibm.com/in-en",
+      data: [{
+          role: "Software Engineer", 
+          timeline: "Jan 24 – Present",
+          desc: "• Design, develop, maintain microservices, front-end for the applications <br>• Managing database, and maintaining code versions using Git <br>• Creating unit test cases to test functionalities of the modules <br>• Preparing HLDs and LLDs, and API Integrations <br>• Automating front-end – using robot framework <br>• Skills used: Java, Spring Boot, Angular, Robot framework, Git, SQL, Rest APIs, Swagger  <br>• Clients included: Daimler trucks innovation center India (DTICI)"
+        }
+      ]
     },
     {
       name: "Wipro", 
-      role: "Software Engineer", 
-      timeline: "Jan 21 – Dec 23",
-      desc: "• Design, develop, maintain microservices, handling data integrations <br>• Carrying out proof of concepts, preparing LLDs <br>• Suggesting suitable APIs to perform integrations with respect to Anaplan <br>• Creating unit test cases to test functionalities of the modules <br>• Skills used: Java, Spring boot, Anaplan, Google Cloud Platform, Rest APIs, Swagger <br>• Clients included: Anaplan, British Telecom"
-    },
-    {
-      name: "Wipro", 
-      role: "Sr. Technical Support Engineer", 
-      timeline: "July 19 – Jan 21",
-      desc: "• Handling technical escalations with respect to server issues <br>• Providing root cause analysis for any issue that is caused in hardware as well as software <br>• Skills used: Linux, Shell scripting, Communication, CAS Storage <br>• Clients included: Dell EMC"
+      href: "https://www.wipro.com/",
+      data: [{
+          role: "Software Engineer", 
+          timeline: "Jan 21 – Dec 23",
+          desc: "• Design, develop, maintain microservices, handling data integrations <br>• Carrying out proof of concepts, preparing LLDs <br>• Suggesting suitable APIs to perform integrations with respect to Anaplan <br>• Creating unit test cases to test functionalities of the modules <br>• Skills used: Java, Spring boot, Anaplan, Google Cloud Platform, Rest APIs, Swagger <br>• Clients included: Anaplan, British Telecom"
+        },
+        {
+          role: "Sr. Technical Support Engineer", 
+          timeline: "July 19 – Jan 21",
+          desc: "• Handling technical escalations with respect to server issues <br>• Providing root cause analysis for any issue that is caused in hardware as well as software <br>• Skills used: Linux, Shell scripting, Communication, CAS Storage <br>• Clients included: Dell EMC"
+        }
+      ]
     },
     {
       name: "MoSPI", 
-      role: "Web Development Intern", 
-      timeline: "June 18 – Aug 18",
-      desc: "• Revamping existing UI to the new defined one <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "
+      href: "https://www.mospi.gov.in/",
+      data:[{
+          role: "Web Development Intern", 
+          timeline: "June 18 – Aug 18",
+          desc: "• Revamping existing UI to the new defined one <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "
+        }
+      ]
   }];
   loadExperience = this.experience_data[0];
-  selectedExperience = {name: this.loadExperience.name, timeline: this.loadExperience.timeline};
+  selectedExperience = {name: this.loadExperience.name};
 
           //  new ProjectStructure(name, desc, skills, ref) 
   projects = [
@@ -181,9 +192,9 @@ export class AppComponent implements AfterViewInit, OnInit{
     window.location.reload();
   }
 
-  showExperience(name: string, timeline: string){
-    this.selectedExperience = {name, timeline};
-    this.loadExperience = this.experience_data.find(item => item.name === name && item.timeline === timeline)!;
+  showExperience(name: string){
+    this.selectedExperience = {name};
+    this.loadExperience = this.experience_data.find(item => item.name === name)!;
   }
 
   renderProjects(){
