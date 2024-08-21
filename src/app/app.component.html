@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <div id="{{mode}}" style="scroll-behavior: smooth;">
     <!-- navbar -->
-    <div @fade id="navBar" style="background-color: {{navbarColor}};">
+    <div @fade id="navBar" [style.background-color]="navbarColor">
         <ul id="navUl" [style.background-color]="navbarColor">
             <li style="float:left">
                 <a class="logo-anchor" href="#summary"><img id="logo" src="../assets/images/logo/{{logo_image}}"></a>
@@ -50,7 +50,7 @@
         </div>
         <div id="right">
             <section id="img_container">
-                <img src="../assets/images/Happy.jpg">
+                <img src="../assets/images/FormalPicture.png">
             </section>
         </div>
     </div>
