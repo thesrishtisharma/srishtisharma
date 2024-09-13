@@ -210,6 +210,10 @@ export class AppComponent implements AfterViewInit, OnInit{
         index++;
       }  
     };
-    console.log(this.projectsBar);
+    // console.log(this.projectsBar);
+  }
+
+  goto_newPage(page: string){
+    window.open(page, '_blank')
   }
 }
