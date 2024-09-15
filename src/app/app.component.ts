@@ -38,7 +38,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   s4TextColor: string = "black";
   btnClass: string = "btn-info";
   navbarText: string = "saddlebrown";
-  navbarColor: string = "#E3E3E3";
+  navbarColor: string = "#f8f8f8";
   logo_image: string = "NoThemeLogo.png";
   checked = true;
   disabled = false;
@@ -184,7 +184,7 @@ export class AppComponent implements AfterViewInit, OnInit{
     this.s4TextColor = this.checked ? "#a8b2d1" : "black";
     this.btnClass = this.checked ? "btn-light" : "btn-info";
     this.navbarText = this.checked ? "#64ffda" : "saddlebrown"
-    this.navbarColor = this.checked ? "#0a192f" : "#e6f1ff";
+    this.navbarColor = this.checked ? "#0a192f" : "#f8f8f8";
     //this.logo_image = this.checked ? "S_Night_Logo.png" : "S_Light_Logo.png";
   }
   
