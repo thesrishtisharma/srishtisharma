@@ -11,7 +11,7 @@
 }
 
 #light{
-    background-color: #e6f1ff;
+    background-color: white;/*#e6f1ff*/
 }
 
 #darkMode{
@@ -32,12 +32,6 @@
 #right img{
     border-radius: 20px;
     padding: 20px;
-    transition: filter 0.3s ease; /* Smooth transition for the filter property */
-    filter: grayscale(100%) brightness(100%);
-}
-
-#right img:hover{
-    filter: grayscale(0%) brightness(100%); /* Removes grayscale and restores brightness on hover */
 }
 
 #dark #img_container img{
@@ -124,7 +118,7 @@ span.material-icons{
 }
 
 #light #project{
-    background-color: #DFEBF9;
+    background-color: #eff5fb;
 }
 
 #icons{
@@ -237,8 +231,16 @@ span.material-icons{
     }
     
     #light #company-name .active{
-        background-color: #DFEBF9;
+        background-color: #eff5fb;
         border-left: 5px solid saddlebrown;
+    }
+    #right img{
+        transition: filter 0.3s ease; /* Smooth transition for the filter property */
+        filter: grayscale(100%) brightness(100%);
+    }
+
+    #right img:hover{
+        filter: grayscale(0%) brightness(100%); /* Removes grayscale and restores brightness on hover */
     }
 }
 
