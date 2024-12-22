@@ -29,6 +29,7 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   @ViewChild('darkModeSwitch', { read: ElementRef }) element: ElementRef | undefined;
 
+  myName: string = "< Srishti Sharma />"
   darkModeActive: boolean = false;
   mode: string = "light";
   textColor: string = "black";
@@ -40,6 +41,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   navbarText: string = "saddlebrown";
   navbarColor: string = "#f8f8f8";
   logo_image: string = "NoThemeLogo.png";
+  navNameColor:string = '#F59E0B';
   checked = true;
   disabled = false;
   experience_data = [
@@ -179,12 +181,15 @@ export class AppComponent implements AfterViewInit, OnInit{
     this.mode = this.checked ? "dark" : "light";
     this.textColor = this.checked ? "white" : "black";
     this.s1TextColor = this.checked ? "#a8b2d1" : "black";
-    this.nameTextColor = this.checked ? "#e6f1ff" : "midnightBlue";
+    this.nameTextColor = this.checked ? "#e6f1ff" : "midnightBlue"; 
     this.dscTextColor = this.checked ? "#ccd6f6" : "midnightBlue";
     this.s4TextColor = this.checked ? "#a8b2d1" : "black";
     this.btnClass = this.checked ? "btn-light" : "btn-info";
     this.navbarText = this.checked ? "#64ffda" : "saddlebrown"
-    this.navbarColor = this.checked ? "#0a192f" : "#f8f8f8";
+    this.navbarColor = this.checked ? "black" : "white"; //0a192f //f8f8f8
+    this.navNameColor = this.checked ? '#F59E0B' : 'midnightBlue'
+
+    //this.logo_image = this.checked ? "../assets/images/NightName.png" : "../assets/images/DayName.png";
     //this.logo_image = this.checked ? "S_Night_Logo.png" : "S_Light_Logo.png";
   }
   
