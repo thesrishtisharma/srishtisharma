@@ -4,8 +4,10 @@
     <!-- navbar -->
     <div @fade id="navBar" [style.background-color]="navbarColor">
         <ul id="navUl" [style.background-color]="navbarColor">
-            <li style="float:left">
-                <a class="logo-anchor" href="#summary"><img id="logo" src="../assets/images/logo/{{logo_image}}"></a>
+            <li style="float: left;">
+                <p class="funnel-display-name" id="dsc" [style.color]="navNameColor">
+                    {{myName}}
+                </p>
             </li>
             <li><mat-slide-toggle id="dark-mode-toggle"
                 #darkModeSwitch
@@ -13,9 +15,8 @@
                 [checked]="checked"
                 [disabled]="disabled">
             </mat-slide-toggle></li>
-            <!-- <li><a href="#contact" [style.color]="navbarText">Contact</a></li> -->
-            <li><a href="#work" [style.color]="navbarText">Work</a></li>
-            <li><a href="#experience" [style.color]="navbarText">Experience</a></li>
+            <li><a class="funnel-display-navbar" href="#work" [style.color]="navbarText">Projects</a></li>
+            <li><a class="funnel-display-navbar" href="#experience" [style.color]="navbarText">Experience</a></li>
         </ul>
     </div>
 
@@ -23,12 +24,11 @@
     <div @slideY class="container" id="summary">
         <div id="left">
             <p>
-                <span id="s1" [style.color]="s1TextColor">Hey there, my name is</span>  <br>
-                <span id="name" [style.color]="nameTextColor"><b>Srishti Sharma</b>.</span>    <br><br>
+                <span id="name" [style.color]="s1TextColor">Hey there, I'm <b id="name" [style.color]="navNameColor">Srishti Sharma</b>.</span>    <br><br>
                 <span id="dsc" [style.color]="dscTextColor">I build things for the web.</span>     <br><br>
                 <span id="s4" [style.color]="s4TextColor">
-                    I am a Software Engineer - proficient in designing, implementing and maintaining web applications while 
-                    collaborating with cross functional teams to deliver high quality solutions. Currently, I am focused on growing my 
+                    I am a <b id="s4" [style.color]="navNameColor">Software Engineer</b> - proficient in designing, implementing and maintaining web applications while 
+                    collaborating with cross functional teams to deliver high quality solutions. Currently, I am growing my 
                     career journey with <b><span [style.color]="nameTextColor">IBM</span></b>.
                 </span>
             </p>
@@ -48,19 +48,10 @@
                 </a>
             </section>
             <br>
-            <!-- <button mat-raised-button class="btn-info" 
-                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"
-                (click)="goto_newPage('https://thesrishtisharma.github.io/Resume/SrishtiSharma.pdf');">
-                <span class="material-symbols-outlined">
-                    description
-                </span>&nbsp;
-                <span class="d-inline-block">View Resume</span>
-            </button> -->
-        </div>
-        <div id="right">
-            <section id="img_container">
-                <img src="../assets/images/FormalPicture.png">
-            </section>
+
+            <button class="btn btn-dark" (click)="goto_newPage('https://drive.google.com/file/d/1urrkYNv3FrF1BWkleh_6aaPuvu8bBuwy/view?usp=sharing')">
+                Download my resume
+            </button>
         </div>
     </div>
     
@@ -80,7 +71,6 @@
             </div>
             <div id="experience">
                 <div *ngFor="let x of loadExperience.data">
-                    <!--Render Current Company Experience-->
                     <h5 [style.color]="navbarText">
                         {{x.role}} 
                         <span [style.color]="nameTextColor"> 
