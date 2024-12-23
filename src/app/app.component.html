@@ -5,9 +5,9 @@
     <div @fade id="navBar" [style.background-color]="navbarColor">
         <ul id="navUl" [style.background-color]="navbarColor">
             <li style="float: left;">
-                <p class="funnel-display-name" id="dsc" [style.color]="navNameColor">
+                <a class="funnel-display-name" id="dsc" href="#summary" skipLocationChange [style.color]="navNameColor">
                     {{myName}}
-                </p>
+                </a>
             </li>
             <li><mat-slide-toggle id="dark-mode-toggle"
                 #darkModeSwitch
@@ -17,6 +17,7 @@
             </mat-slide-toggle></li>
             <li><a class="funnel-display-navbar" href="#work" [style.color]="navbarText">Projects</a></li>
             <li><a class="funnel-display-navbar" href="#experience" [style.color]="navbarText">Experience</a></li>
+            <li><a class="funnel-display-navbar" href="#education" [style.color]="navbarText">Education</a></li>
         </ul>
     </div>
 
@@ -55,6 +56,37 @@
         </div>
     </div>
     
+    <!--   Education   -->
+    <div @slideY class="container" id="education">
+        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Skills & Education</h2>
+        <div id="education-tab">
+            <div id="category-name">
+                <ul id="eduList">
+                    <li *ngFor="let certificate of education_data" 
+                        [style.color]="nameTextColor"
+                        [class.active]="selectedEducation.name === certificate.name" 
+                        (click)="showEducation(certificate.name)">
+                        <b>{{certificate.name}}</b>
+                    </li>
+                </ul>
+            </div>
+            <div id="education">
+                <section *ngFor="let education of loadEducation.data">
+                    <p id="h5" [style.color]="navbarText">
+                        <b>{{education.cert}}</b> 
+                        <span style="color: #8892b0; float: right;">{{education.completion}}</span>
+                    </p>
+                    <p id="eduDesc" [style.color]="s4TextColor">
+                        &nbsp;&nbsp;{{education.issuer}}
+                        <span *ngIf="education.score" style="color: #8892b0; float: right;">{{education.score}}</span>
+                    </p>
+                    <hr>
+                    <br *ngIf="loadExperience.data.length > 1">
+                </section>
+            </div>
+        </div>
+    </div>
+    
     <!--   Experience   -->
     <div @slideY class="container" id="experience">
         <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Work Experience</h2>
@@ -70,7 +102,7 @@
                 </ul>
             </div>
             <div id="experience">
-                <div *ngFor="let x of loadExperience.data">
+                <section *ngFor="let x of loadExperience.data">
                     <h5 [style.color]="navbarText">
                         {{x.role}} 
                         <span [style.color]="nameTextColor"> 
@@ -83,7 +115,7 @@
                     <p style="color: #8892b0">{{x.timeline}}</p>
                     <p [style.color]="s4TextColor" [innerHTML]="x.desc"></p>
                     <br *ngIf="loadExperience.data.length > 1">
-                </div>
+                </section>
             </div>
         </div>
     </div>
