@@ -4,9 +4,11 @@
 /* width */
   ::-webkit-scrollbar {
     width: 10px;
-    height: 8px;
   }
    
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Set the background of the track to transparent */
+  }
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: midnightblue;
@@ -31,5 +33,6 @@ body {
   background-color: purple;
 } 
 
-/* Navbar Fonts */
-
+html {
+  scroll-behavior: smooth;
+}

@@ -1,6 +1,18 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 
+interface EducationItem {
+  cert: string;
+  issuer: string;
+  score?: string;  // Make score optional
+  completion: string;
+}
+
+interface EducationCategory {
+  name: string;
+  data: EducationItem[];
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,6 +56,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   navNameColor:string = '#F59E0B';
   checked = true;
   disabled = false;
+  
   experience_data = [
     {
       name: "IBM", 
@@ -83,7 +96,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   loadExperience = this.experience_data[0];
   selectedExperience = {name: this.loadExperience.name};
 
-          //  new ProjectStructure(name, desc, skills, ref) 
+  //  new ProjectStructure(name, desc, skills, ref) 
   projects = [
     {
       name: "Anaplan Connector",
@@ -141,9 +154,130 @@ export class AppComponent implements AfterViewInit, OnInit{
     }
   ];
 
+  // add most recents on top
+  education_data: EducationCategory[] = [
+    {
+      name: 'Educational Degree',
+      data: [
+        {
+          cert: 'Master of Technology',
+          issuer: 'Birla Institute of Technology & Science (BITS), Pilani',
+          score: '80%',
+          completion: '2019 - 2024'
+        },
+        {
+          cert: 'Bachelor of Computer Applications',
+          issuer: 'VIPS affiliated to GGS IP University',
+          score: '87.5%',
+          completion: '2016 - 2019'
+        },
+        {
+          cert: 'Higher Secondary Certificate',
+          issuer: 'CBSE',
+          score: '74.4%',
+          completion: '2015 - 2016'
+        },
+        {
+          cert: 'Secondary School Certificate',
+          issuer: 'CBSE',
+          score: '76%',
+          completion: '2013 - 2014'
+        }
+      ]
+    },
+    {
+      name: 'Skills & Certificates',
+      data: [
+        {
+          cert: 'Full Stack Java Developer',
+          issuer: 'Udemy',
+          completion: 'Mar 26, 2023' 
+        },
+        {
+          cert: 'Google Cloud Platform - Essentials',
+          issuer: 'Udemy',
+          completion: 'Sept, 2022' 
+        },
+        {
+          cert: 'Google US Design Professional',
+          issuer: 'Coursera',
+          completion: 'Feb 16, 2022' 
+        },
+        {
+          cert: 'Full Stack Java Enterprise',
+          issuer: 'WIPRO',
+          completion: 'Oct 14 2021' 
+        },
+        {
+          cert: 'HTML5 and CSS3',
+          issuer: 'Udemy',
+          completion: 'Dec 23, 2017' 
+        }
+      ]
+    },
+    {
+      name: 'Recognitions & Others',
+      data: [
+        {
+          cert: 'Achievement certificate for automating project work for testers',
+          issuer: 'WIPRO',
+          completion: '2023 - 2024'   
+        },
+        {
+          cert: 'Inspiring Performance',
+          issuer: 'WIPRO',
+          completion: 'Mar 24, 2023'   
+        },
+        {
+          cert: 'Inspiring Performance',
+          issuer: 'WIPRO',
+          completion: 'Jan 30, 2023'   
+        },
+        {
+          cert: 'Inspiring Performance',
+          issuer: 'WIPRO',
+          completion: 'Dec 12, 2022'   
+        },
+        {
+          cert: 'Inspiring Performance',
+          issuer: 'WIPRO',
+          completion: 'Nov 14, 2022'   
+        },
+        {
+          cert: 'Habit Flagbearer – Demonstrating Stewardship',
+          issuer: 'WIPRO',
+          completion: 'Jul 22, 2022'   
+        },
+        {
+          cert: 'Habit Flagbearer – Building trust',
+          issuer: 'WIPRO',
+          completion: 'Feb 22, 2022'   
+        },
+        {
+          cert: 'Employee of the Quarter',
+          issuer: 'WIPRO',
+          completion: 'Q2 – 2020'   
+        },
+        {
+          cert: 'Best Rookie',
+          issuer: 'WIPRO',
+          completion: 'March 2020'   
+        },
+        {
+          cert: 'Discipline Coordinator CSI - NSC',
+          issuer: "Computer Society of India - National Student's Convention",
+          completion: 'Jan 2018'   
+        }
+      ]
+    }
+  ]
+  loadEducation = this.education_data[0];
+  selectedEducation = {name: this.loadEducation.name};
+
   projectsBar: {row: number, data: {name: string, desc: string, skills: string, ref: string}[]}[] = [];
 
   ngOnInit(): void {
+    this.myName = window.innerWidth < 600 ? '< Srishti />' : this.myName;
     this.renderProjects();
   }
 
@@ -200,6 +334,11 @@ export class AppComponent implements AfterViewInit, OnInit{
   showExperience(name: string){
     this.selectedExperience = {name};
     this.loadExperience = this.experience_data.find(item => item.name === name)!;
+  }
+
+  showEducation(name: string){
+    this.selectedEducation = {name};
+    this.loadEducation = this.education_data.find(item => item.name === name)!;
   }
 
   renderProjects(){

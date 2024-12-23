@@ -37,27 +37,13 @@
 }
 
 #summary{
-    padding-top: 5%;
+    padding-top: 6%;
+    margin-bottom: 2%;
 }
 
-#summary, #experience, #work, #contact{
+#summary, #experience, #work, #contact, #education{
     display: block;
     padding-bottom: 10%;
-}
-
-#right img{
-    border-radius: 20px;
-    padding: 20px;
-}
-
-#dark #img_container img{
-    border-bottom: 2px solid #64ffda;
-    border-right: 2px solid #64ffda;
-}
-
-#light #img_container img{
-    border-bottom: 2px solid saddlebrown;
-    border-right: 2px solid saddlebrown;
 }
 
 #navBar{
@@ -91,19 +77,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: large;
-}
-
-#navUl li p{
-    display: block;
-    text-align: center;
-    padding: 16px 16px;
-}
-
-#logo{
-    width: 10vh;
-    padding: 5%;
-    cursor: pointer;
+    /* font-size: large; */
 }
 
 span.material-icons{
@@ -111,17 +85,29 @@ span.material-icons{
     padding: 3px;
 }
 
-/** Experience Div **/
-#dark #experience-tab #experience{
+/** Experience & Education Div **/
+#dark #experience-tab #experience, #dark #education-tab #education{
     border: 1px solid #112240;
 }   
 
-#light #experience-tab #experience{
+#light #experience-tab #experience,#light #education-tab #education{
     border: 1px solid #ccd6f6;
+}  
+
+#dark #education-tab #education hr{
+    border-bottom: 1px solid #112240;
+}   
+
+#light #education-tab #education hr{
+    border-bottom: 1px solid #ccd6f6;
 }  
 
 #dark ol li:hover{
     background-color: #233554;
+}
+
+#eduDesc{
+    padding-right: 25px;
 }
 
 /** Projects **/
@@ -186,6 +172,16 @@ span.material-icons{
     width: 50%;
 }
 
+#education-tab #education, #experience-tab #experience{
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+#education section, #experience section{
+    overflow-y: hidden;
+}
+
 /* For desktop: */
 @media screen and (min-width: 1000px) {
     #s1, #s4{
@@ -224,24 +220,24 @@ span.material-icons{
     }
     
     /** Experience Div **/
-    #experience-tab{
+    #experience-tab, #education-tab{
         display: flex;
         justify-content: space-between;
         padding: 5%;
     }
     
-    #experience-tab #company-name{
+    #experience-tab #company-name, #education-tab #category-name{
         width: 30%;
     }
     
-    #experience-tab #experience{
+    #experience-tab #experience, #education-tab #education{
         width: 65%;
         margin-left: 1%;
-        padding: 2%;
         border-radius: 20px;
+        padding: 2%;
     }
     
-    #expList li{
+    #expList li, #eduList li{
         display: block;
         cursor: pointer;
         padding: 8px 8px 8px 12px;
@@ -249,22 +245,22 @@ span.material-icons{
         /*border-radius: 10px;*/
     }
 
-    #dark #expList li{
+    #dark #expList li, #dark #eduList li{
         border-top: 1px solid #112240;
         border-bottom: 1px solid #112240;
     }
 
-    #light #expList li{
+    #light #expList li, #light #eduList li{
         border-top: 1px solid #DFEBF9;
         border-bottom: 1px solid #DFEBF9;
     }
 
-    #dark #company-name .active{
+    #dark #company-name .active, #dark #category-name .active{
         background-color: #112240;
         border-left: 5px solid #64ffda;
     }
     
-    #light #company-name .active{
+    #light #company-name .active, #light #category-name .active{
         background-color: #eff5fb;
         border-left: 5px solid saddlebrown;
     }
@@ -289,7 +285,7 @@ span.material-icons{
     }
 
     #dsc{
-        font-size: 24px;
+        font-size: 22px;
     }
 
     #social_handles a{
@@ -315,46 +311,46 @@ span.material-icons{
     }
 
     /** Experience Div **/
-    #experience-tab{
+    #experience-tab, #education-tab{
         display: flex;
         justify-content: space-between;
         padding: 1%;
     }
 
-    #experience-tab #company-name{
+    #experience-tab #company-name, #education-tab #category-name{
         width: 30%;
     }
     
-    #experience-tab #experience{
+    #experience-tab #experience, #education-tab #education{
         width: 65%;
         margin-left: 1%;
         padding: 2%;
         border-radius: 20px;
     }
 
-    #expList li{
+    #expList li, #edulist li{
         display: block;
         cursor: pointer;
         padding: 8px 8px 8px 12px;
         margin-top: 2%;
     }
 
-    #dark #expList li{
+    #dark #expList li, #dark #eduList li{
         border-top: 1px solid #112240;
         border-bottom: 1px solid #112240;
     }
 
-    #light #expList li{
+    #light #expList li, #light #eduList li{
         border-top: 1px solid #DFEBF9;
         border-bottom: 1px solid #DFEBF9;
     }
 
-    #dark #company-name .active{
+    #dark #company-name .active, #dark #category-name .active{
         background-color: #112240;
         border-left: 5px solid #64ffda;
     }
     
-    #light #company-name .active{
+    #light #company-name .active, #light #category-name .active{
         background-color: #DFEBF9;
         border-left: 5px solid saddlebrown;
     }
@@ -362,6 +358,10 @@ span.material-icons{
 
 /* For phones: */
 @media screen and (max-width: 600px) {
+    #navUl li a:not(.logo-anchor), ul li #dark-mode-toggle{
+        padding: 14px 10px;
+    }
+
     #s1, #s4{
         font-size: 12px;
     }
@@ -371,7 +371,7 @@ span.material-icons{
     }
 
     #dsc{
-        font-size: 18px;
+        font-size: 14px;
     }
 
     li a, li mat-slide-toggle{
@@ -405,20 +405,20 @@ span.material-icons{
     }
 
     /** Experience Div **/
-    #experience h5{
+    #experience #h5, #education #h5{
         font-size: 14px;
     }
 
-    #experience p{
+    #experience p, #education p{
         font-size: 12px;
     } 
 
-    #expList{
+    #expList, #eduList{
         white-space: nowrap;
         overflow-x: scroll;
     }
 
-    #expList li{
+    #expList li, #eduList li{
         display: inline-block;
         cursor: pointer;
         padding: 8px;
@@ -433,30 +433,35 @@ span.material-icons{
         vertical-align: middle;
     }
 
-    #dark #expList li{
+    #dark #expList li, #dark #eduList li{
         border-left: 1px solid #112240;
         border-right: 1px solid #112240;
     }
 
-    #light #expList li{
+    #light #expList li, #light #eduList li{
         border-left: 1px solid #DFEBF9;
         border-right: 1px solid #DFEBF9;
     }
 
-    #experience{
+    #experience, #education{
         padding: 4%;
         border-radius: 20px;
-        min-height: 300px;
     }
 
-    #dark #company-name .active{
+    #dark #company-name .active, #dark #category-name .active{
         background-color: #112240;
         border-bottom: 5px solid #64ffda;
     }
     
-    #light #company-name .active{
+    #light #company-name .active, #light #category-name .active{
         background-color: #DFEBF9;
         border-bottom: 5px solid saddlebrown;
+    }
+
+    #education-tab #education, #experience-tab #experience{
+        min-height: 40vh;
+        max-height: 40vh;
+        overflow-y: scroll;
     }
 
     /** WORK */
