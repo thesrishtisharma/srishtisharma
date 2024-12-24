@@ -91,7 +91,7 @@ export class AppComponent implements AfterViewInit, OnInit{
       data:[{
           role: "Web Development Intern", 
           timeline: "June 18 – Aug 18",
-          desc: "• Revamping existing UI to the new defined one <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "
+          desc: "• MoSPI: Ministry of Statistics & Programme Implementation <br>• Revamping existing UI to the new defined one <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "
         }
       ]
   }];
@@ -201,7 +201,7 @@ export class AppComponent implements AfterViewInit, OnInit{
           completion: 'Sept, 2022' 
         },
         {
-          cert: 'Google US Design Professional',
+          cert: 'Google UX Design Professional',
           issuer: 'Coursera',
           completion: 'Feb 16, 2022' 
         },
