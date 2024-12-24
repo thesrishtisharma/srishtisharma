@@ -25,7 +25,7 @@
     <div @slideY class="container" id="summary">
         <div id="left">
             <p>
-                <span id="name" [style.color]="s1TextColor">Hey there, I'm <b id="name" [style.color]="navNameColor">Srishti Sharma</b>.</span>    <br><br>
+                <span id="name" [style.color]="s1TextColor">Hey there, I'm <b id="name" class="funnel-display-name" [style.color]="navNameColor">Srishti Sharma</b>.</span>    <br><br>
                 <span id="dsc" [style.color]="dscTextColor">I build things for the web.</span>     <br><br>
                 <span id="s4" [style.color]="s4TextColor">
                     I am a <b id="s4" [style.color]="navNameColor">Software Engineer</b> - proficient in designing, implementing and maintaining web applications while 
@@ -58,7 +58,7 @@
     
     <!--   Education   -->
     <div @slideY class="container" id="education">
-        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Skills & Education</h2>
+        <h2 class="jura-copyright" [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Skills & Education</h2>
         <div id="education-tab">
             <div id="category-name">
                 <ul id="eduList">
@@ -89,7 +89,7 @@
     
     <!--   Experience   -->
     <div @slideY class="container" id="experience">
-        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Work Experience</h2>
+        <h2 class="jura-copyright" [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Work Experience</h2>
         <div id="experience-tab">
             <div id="company-name">
                 <ul id="expList">
@@ -122,7 +122,7 @@
 
     <!--   Work   -->
     <div @slideY class="container" id="work">
-        <h2 [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Key Projects</h2>
+        <h2 class="jura-copyright" [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Key Projects</h2>
 
         <div class="container" id="projects_container" class="row" *ngFor="let row of projectsBar">
             <div id="project" class="col-sm" *ngFor="let project of row.data">
@@ -158,8 +158,10 @@
             
         </div>
     </div> -->
+    
+    <!-- Copyrights -->
     <div @slideY class="container" id="copyrights">
-        <span [style.color]="navNameColor">
+        <span class="jura-copyright" [style.color]="navNameColor">
             {{SrishtiSharma_Copyrights}}
         </span>
     </div>

@@ -12,7 +12,13 @@
     font-style: normal;
     font-size: large;
 }
-  
+
+.jura-copyright {
+    font-family: "Jura", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
 
 .class-#name{
     color:red;

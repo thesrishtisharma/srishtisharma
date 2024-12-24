@@ -56,6 +56,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   navbarColor: string = "#f8f8f8";
   logo_image: string = "NoThemeLogo.png";
   navNameColor:string = '#F59E0B';
+  headings: string = '#F59E0B';
   checked = true;
   disabled = false;
   
@@ -65,8 +66,8 @@ export class AppComponent implements AfterViewInit, OnInit{
       href: "https://www.ibm.com/in-en",
       data: [{
           role: "Software Engineer", 
-          timeline: "Jan 24 – Present",
-          desc: "• Design, develop, maintain microservices, front-end for the applications <br>• Managing database, and maintaining code versions using Git <br>• Creating unit test cases to test functionalities of the modules <br>• Preparing HLDs and LLDs, and API Integrations <br>• Automating front-end – using robot framework <br>• Skills used: Java, Spring Boot, Angular, Robot framework, Git, SQL, Rest APIs, Swagger  <br>• Clients included: Daimler trucks innovation center India (DTICI)"
+          timeline: "Jan'24 – Present",
+          desc: "• Design, develop, maintain microservices, front-end for the applications <br>• Managing database, and maintaining code versions using Git <br>• Creating unit test cases to test functionalities of the modules <br>• Preparing HLDs and LLDs, and API Integrations <br>• Automating front-end – using robot framework <br>• Skills used: Java, Spring Boot, Angular, Robot framework, Git, SQL, Rest APIs, Swagger  <br>• Clients included: Daimler Trucks Innovation Center India (DTICI)"
         }
       ]
     },
@@ -75,12 +76,12 @@ export class AppComponent implements AfterViewInit, OnInit{
       href: "https://www.wipro.com/",
       data: [{
           role: "Software Engineer", 
-          timeline: "Jan 21 – Dec 23",
+          timeline: "Jan'21 – Dec'23",
           desc: "• Design, develop, maintain microservices, handling data integrations <br>• Carrying out proof of concepts, preparing LLDs <br>• Suggesting suitable APIs to perform integrations with respect to Anaplan <br>• Creating unit test cases to test functionalities of the modules <br>• Skills used: Java, Spring boot, Anaplan, Google Cloud Platform, Rest APIs, Swagger <br>• Clients included: Anaplan, British Telecom"
         },
         {
           role: "Sr. Technical Support Engineer", 
-          timeline: "July 19 – Jan 21",
+          timeline: "July'19 – Jan'21",
           desc: "• Handling technical escalations with respect to server issues <br>• Providing root cause analysis for any issue that is caused in hardware as well as software <br>• Skills used: Linux, Shell scripting, Communication, CAS Storage <br>• Clients included: Dell EMC"
         }
       ]
@@ -90,8 +91,8 @@ export class AppComponent implements AfterViewInit, OnInit{
       href: "https://www.mospi.gov.in/",
       data:[{
           role: "Web Development Intern", 
-          timeline: "June 18 – Aug 18",
-          desc: "• MoSPI: Ministry of Statistics & Programme Implementation <br>• Revamping existing UI to the new defined one <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "
+          timeline: "June'18 – Aug'18",
+          desc: "• MoSPI: Ministry of Statistics & Programme Implementation <br>• Revamping their former website. <br>• Skills used: HTML5, CSS3, JS, PHP, AJAX "
         }
       ]
   }];
@@ -102,7 +103,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   projects = [
     {
       name: "Anaplan Connector",
-      desc: "An interoperability connector that connects any http client (source system) with Anaplan with the help Google Cloud Platform (Approaches: Real time & Bulk Data).",
+      desc: "An interoperability connector that connects any http client (source system) with Anaplan with the help of Google Cloud Platform (Approaches: Real time & Bulk Data).",
       skills: "Java, Spring, GCP – Pub/Sub, Cloud Run, Cloud Storage, Cloud Logging, Anaplan APIs, HTML, CSS, Bootstrap (Thymeleaf template engine)",
       ref: "#"
     },
@@ -120,7 +121,7 @@ export class AppComponent implements AfterViewInit, OnInit{
     },
     {
       name: "Restaurant App - UX",
-      desc: "US Design project for ordering food from design. Supported devices: mobile",
+      desc: "UX Design project for ordering food from design. Supported devices: mobile",
       skills: "Wireframe, Prototyping, Figma",
       ref: "https://www.figma.com/proto/s0dNwxGXAIVK7nsm3N48r3/Google-UX-Invitation-Project?node-id=50-124&scaling=scale-down&page-id=46%3A2&starting-point-node-id=46%3A4"
     },
@@ -132,7 +133,7 @@ export class AppComponent implements AfterViewInit, OnInit{
     },
     {
       name: "Flowers Online E-Store",
-      desc: "eCommerce webapp to sell flowers: A full-stack development project. Had 2 modules : customer & admin.",
+      desc: "eCommerce webapp: A full-stack development project having 2 modules : customer & admin.",
       skills: "Java, Spring Boot, Angular, H2 In Memory DB",
       ref: "https://thesrishtisharma.github.io/Flowers-Online-WebApp/"
     },
@@ -149,7 +150,7 @@ export class AppComponent implements AfterViewInit, OnInit{
       ref: "https://thesrishtisharma.github.io/Flight-Admin-System/"
     },
     {
-      name: "Car Re-selling store",
+      name: "Car Re-selling Store",
       desc: "This is a mini webapp to re-sell the used cars as part of personal projects.",
       skills: "Java, Spring MVC, JSP, My-SQL DB",
       ref: "https://thesrishtisharma.github.io/Best-Choice-Cars/"
@@ -207,7 +208,7 @@ export class AppComponent implements AfterViewInit, OnInit{
         },
         {
           cert: 'Full Stack Java Enterprise',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Oct 14 2021' 
         },
         {
@@ -221,48 +222,48 @@ export class AppComponent implements AfterViewInit, OnInit{
       name: 'Recognitions & Others',
       data: [
         {
-          cert: 'Achievement certificate for automating project work for testers',
-          issuer: 'WIPRO',
+          cert: 'Achievement Certificate - Automating Project Work for Testers',
+          issuer: 'Wipro',
           completion: '2023 - 2024'   
         },
         {
           cert: 'Inspiring Performance',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Mar 24, 2023'   
         },
         {
           cert: 'Inspiring Performance',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Jan 30, 2023'   
         },
         {
           cert: 'Inspiring Performance',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Dec 12, 2022'   
         },
         {
           cert: 'Inspiring Performance',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Nov 14, 2022'   
         },
         {
           cert: 'Habit Flagbearer – Demonstrating Stewardship',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Jul 22, 2022'   
         },
         {
-          cert: 'Habit Flagbearer – Building trust',
-          issuer: 'WIPRO',
+          cert: 'Habit Flagbearer – Building Trust',
+          issuer: 'Wipro',
           completion: 'Feb 22, 2022'   
         },
         {
           cert: 'Employee of the Quarter',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'Q2 – 2020'   
         },
         {
           cert: 'Best Rookie',
-          issuer: 'WIPRO',
+          issuer: 'Wipro',
           completion: 'March 2020'   
         },
         {
@@ -308,7 +309,7 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   changeTheme() {
     this.checked = !this.checked;
-    console.log('I am now ', this.checked);
+    // console.log('I am now ', this.checked);
     this.setIcon();
     this.applyTheme();
   }
