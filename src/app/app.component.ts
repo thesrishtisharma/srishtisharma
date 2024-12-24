@@ -41,7 +41,9 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   @ViewChild('darkModeSwitch', { read: ElementRef }) element: ElementRef | undefined;
 
-  myName: string = "< Srishti Sharma />"
+  myName: string = "< Srishti Sharma />";
+  SrishtiSharma_Copyrights: string = "© 2024. Srishti Sharma. All rights reserved."
+
   darkModeActive: boolean = false;
   mode: string = "light";
   textColor: string = "black";
