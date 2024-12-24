@@ -177,7 +177,7 @@ export class AppComponent implements AfterViewInit, OnInit{
         {
           cert: 'Higher Secondary Certificate',
           issuer: 'CBSE',
-          score: '74.4%',
+          score: '80.5%',
           completion: '2015 - 2016'
         },
         {
