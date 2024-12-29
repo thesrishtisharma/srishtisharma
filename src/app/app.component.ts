@@ -102,6 +102,12 @@ export class AppComponent implements AfterViewInit, OnInit{
   //  new ProjectStructure(name, desc, skills, ref) 
   projects = [
     {
+      name: "Indian Bank Branch Locator",
+      desc: "A mobile application that serves Android and IOS. Purpose of the app is to pull IB branch details (like - address, contact, IFSC code, email id) based on city/zone selection made by the user.",
+      skills: "React native, Node JS, Swagger Open API (Access project for Open API link)",
+      ref: "https://thesrishtisharma.github.io/IB-Backend-API-Node/"
+    },
+    {
       name: "Anaplan Connector",
       desc: "An interoperability connector that connects any http client (source system) with Anaplan with the help of Google Cloud Platform (Approaches: Real time & Bulk Data).",
       skills: "Java, Spring, GCP – Pub/Sub, Cloud Run, Cloud Storage, Cloud Logging, Anaplan APIs, HTML, CSS, Bootstrap (Thymeleaf template engine)",
