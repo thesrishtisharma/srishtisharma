@@ -44,6 +44,8 @@ export class AppComponent implements AfterViewInit, OnInit{
   myName: string = "< Srishti Sharma />";
   SrishtiSharma_Copyrights: string = "© 2024. Srishti Sharma. All rights reserved."
 
+  atChar: string = "@";
+
   darkModeActive: boolean = false;
   mode: string = "light";
   textColor: string = "black";
