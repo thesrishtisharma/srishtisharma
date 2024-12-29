@@ -58,7 +58,7 @@
     
     <!--   Education   -->
     <div @slideY class="container" id="education">
-        <h2 class="jura-copyright" [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Skills & Education</h2>
+        <h2 class="jura-copyright" [style.color]="navbarText" [style.borderBottom]="'1px solid '+navbarText">My Skills & Education</h2>
         <div id="education-tab">
             <div id="category-name">
                 <ul id="eduList">
@@ -89,7 +89,7 @@
     
     <!--   Experience   -->
     <div @slideY class="container" id="experience">
-        <h2 class="jura-copyright" [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">My Work Experience</h2>
+        <h2 class="jura-copyright" [style.color]="navbarText" [style.borderBottom]="'1px solid '+navbarText">My Work Experience</h2>
         <div id="experience-tab">
             <div id="company-name">
                 <ul id="expList">
@@ -106,7 +106,7 @@
                     <h5 [style.color]="navbarText">
                         {{x.role}} 
                         <span [style.color]="nameTextColor"> 
-                            @ 
+                            {{atChar}}
                             <a [href]="loadExperience.href" style="text-decoration: none;" [style.color]="nameTextColor"> 
                                 {{loadExperience.name}}
                             </a>
@@ -120,9 +120,9 @@
         </div>
     </div>
 
-    <!--   Work   -->
+    <!--   Projects   -->
     <div @slideY class="container" id="work">
-        <h2 class="jura-copyright" [style.color]="navbarText" style="border-bottom: 1px solid {{navbarText}}">Key Projects</h2>
+        <h2 class="jura-copyright" [style.color]="navbarText" [style.borderBottom]="'1px solid '+navbarText">Key Projects</h2>
 
         <div class="container" id="projects_container" class="row" *ngFor="let row of projectsBar">
             <div id="project" class="col-sm" *ngFor="let project of row.data">
