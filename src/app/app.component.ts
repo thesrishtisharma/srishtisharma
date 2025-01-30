@@ -42,7 +42,10 @@ export class AppComponent implements AfterViewInit, OnInit{
   @ViewChild('darkModeSwitch', { read: ElementRef }) element: ElementRef | undefined;
 
   myName: string = "< Srishti Sharma />";
-  SrishtiSharma_Copyrights: string = "© 2024. Srishti Sharma. All rights reserved."
+  displayName: string = "";
+  displayedName: string[] = [];
+
+  SrishtiSharma_Copyrights: string = "© 2025. Srishti Sharma. All rights reserved."
 
   atChar: string = "@";
 
@@ -289,6 +292,7 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   ngOnInit(): void {
     this.myName = window.innerWidth < 600 ? '< Srishti />' : this.myName;
+    this.animateName();
     this.renderProjects();
   }
 
@@ -338,6 +342,29 @@ export class AppComponent implements AfterViewInit, OnInit{
     //this.logo_image = this.checked ? "S_Night_Logo.png" : "S_Light_Logo.png";
   }
   
+  animateName(): void{
+    let idx = 0;
+    let name = this.myName;
+    this.displayedName = [];
+
+    const intervalId = setInterval(() => {
+      if (idx < name.length) {
+        if(name.charAt(idx) == ' '){
+          this.displayName += name.charAt(idx);
+          this.displayedName.push('_');
+        } else{
+          this.displayName += name.charAt(idx);
+          this.displayedName.push(name.charAt(idx));
+        }
+        idx++;
+      } else {
+        clearInterval(intervalId); // Stop once the entire name is revealed
+      }
+    }, 300); 
+
+    console.log(this.displayedName);
+  }
+
   reload(){
     window.location.reload();
   }
