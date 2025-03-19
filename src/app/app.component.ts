@@ -62,7 +62,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   logo_image: string = "NoThemeLogo.png";
   navNameColor:string = '#F59E0B';
   headings: string = '#F59E0B';
-  checked = true;
+  checked = false;
   disabled = false;
   
   experience_data = [

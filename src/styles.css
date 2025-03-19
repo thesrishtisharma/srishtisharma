@@ -11,12 +11,12 @@
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: midnightblue;
+    background: rgb(231, 231, 255);
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #4144a3;
+    background: #bcbeff;
   }
   /* ::-webkit-scrollbar {
     display: none;
