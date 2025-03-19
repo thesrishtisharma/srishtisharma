@@ -1,20 +1,21 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<div id="{{mode}}" style="scroll-behavior: smooth;">
+
+<div id="screen" style="scroll-behavior: smooth;" class="grid-background">
     <!-- navbar -->
-    <div @fade id="navBar" [style.background-color]="navbarColor">
-        <ul id="navUl" [style.background-color]="navbarColor">
+    <div @fade id="navBar">
+        <ul id="navUl" style="background-color: rgba(255, 255, 255, 0.51);">
             <li style="float: left;">
                 <a class="funnel-display-name" id="dsc" href="#summary" skipLocationChange [style.color]="navNameColor">
                     {{displayName}} <!--{{myName}}-->
                 </a>
             </li>
-            <li><mat-slide-toggle id="dark-mode-toggle"
+            <!-- <li><mat-slide-toggle id="dark-mode-toggle"
                 #darkModeSwitch
                 (change)="changeTheme()"
                 [checked]="checked"
                 [disabled]="disabled">
-            </mat-slide-toggle></li>
+            </mat-slide-toggle></li> -->
             <li><a class="funnel-display-navbar" href="#work" [style.color]="navbarText">Projects</a></li>
             <li><a class="funnel-display-navbar" href="#experience" [style.color]="navbarText">Experience</a></li>
             <li><a class="funnel-display-navbar" href="#education" [style.color]="navbarText">Education</a></li>
@@ -50,7 +51,7 @@
             </section>
             <br>
 
-            <button class="btn btn-dark" (click)="goto_newPage('https://drive.google.com/file/d/1-OGWnYIDUZUvUx_jBP9imxvVy_h_EeKJ/view?usp=sharing')">
+            <button id="downloadResume" class="btn btn-outline-primary" (click)="goto_newPage('https://drive.google.com/file/d/1-OGWnYIDUZUvUx_jBP9imxvVy_h_EeKJ/view?usp=sharing')">
                 Download my resume
             </button>
         </div>

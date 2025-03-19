@@ -1,3 +1,11 @@
+.grid-background {
+    background-color: white;
+    background-image: 
+        linear-gradient(rgba(104, 99, 99, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 70, 70, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
 .funnel-display-navbar {
     font-family: "Funnel Display", serif;
     font-optical-sizing: auto;
@@ -58,6 +66,7 @@
     padding-left: 2%;
     padding-right: 2%;
     z-index: 1 !important;
+    background-color: white;
 }
 
 #navUl {
@@ -83,6 +92,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
     /* font-size: large; */
 }
 
@@ -92,25 +102,28 @@ span.material-icons{
 }
 
 /** Experience & Education Div **/
-#dark #experience-tab #experience, #dark #education-tab #education{
+/* #dark #experience-tab #experience, #dark #education-tab #education{
     border: 1px solid #112240;
-}   
-
-#light #experience-tab #experience,#light #education-tab #education{
-    border: 1px solid #ccd6f6;
-}  
+}    
 
 #dark #education-tab #education hr{
     border-bottom: 1px solid #112240;
-}   
-
-#light #education-tab #education hr{
-    border-bottom: 1px solid #ccd6f6;
-}  
+} 
 
 #dark ol li:hover{
     background-color: #233554;
 }
+
+#light */
+
+#experience-tab #experience, #education-tab #education{
+    border: 1px solid #ccd6f6;
+}  
+ 
+
+#education-tab #education hr{
+    border-bottom: 1px solid #ccd6f6;
+}  
 
 #eduDesc{
     padding-right: 25px;
@@ -126,14 +139,7 @@ span.material-icons{
     width: 20rem;
     margin: 1%;
     padding: 1%;
-}
-
-#dark #project{
-    background-color: #233554;
-}
-
-#light #project{
-    background-color: #eff5fb;
+    background-color: #e7e8e955;
 }
 
 #icons{
@@ -143,13 +149,6 @@ span.material-icons{
 
 #folder-icon{
     font-size: 48px;
-}
-
-#dark #folder-icon{
-    color: #64ffda;
-}
-
-#light #folder-icon{
     color: saddlebrown;
 }
 
@@ -159,12 +158,10 @@ span.material-icons{
     vertical-align: top;
     margin-left: 5%;
     padding-top: 5%;
-}
-#dark #open-link{
-    color: white;
+    color: rgb(21, 180, 156);
 }
 
-#light #open-link{
+#open-link{
     color: midnightblue;
 }
 
@@ -172,8 +169,8 @@ span.material-icons{
     opacity: 1;
 }
 
-.btn-dark{
-    border: 3px solid #F59E0B;
+#downloadResume{
+    border: 3px solid midnightblue;
     border-radius: 10px;
     width: 50%;
 }
@@ -257,23 +254,13 @@ span.material-icons{
         /*border-radius: 10px;*/
     }
 
-    #dark #expList li, #dark #eduList li{
-        border-top: 1px solid #112240;
-        border-bottom: 1px solid #112240;
-    }
-
-    #light #expList li, #light #eduList li{
+    #expList li, #eduList li{
         border-top: 1px solid #DFEBF9;
         border-bottom: 1px solid #DFEBF9;
     }
 
-    #dark #company-name .active, #dark #category-name .active{
-        background-color: #112240;
-        border-left: 5px solid #64ffda;
-    }
-    
-    #light #company-name .active, #light #category-name .active{
-        background-color: #eff5fb;
+    #company-name .active, #category-name .active{
+        background-color: #eff5fb84;
         border-left: 5px solid saddlebrown;
     }
     #right img{
@@ -347,22 +334,12 @@ span.material-icons{
         margin-top: 2%;
     }
 
-    #dark #expList li, #dark #eduList li{
-        border-top: 1px solid #112240;
-        border-bottom: 1px solid #112240;
-    }
-
-    #light #expList li, #light #eduList li{
+    #expList li, #eduList li{
         border-top: 1px solid #DFEBF9;
         border-bottom: 1px solid #DFEBF9;
     }
-
-    #dark #company-name .active, #dark #category-name .active{
-        background-color: #112240;
-        border-left: 5px solid #64ffda;
-    }
     
-    #light #company-name .active, #light #category-name .active{
+    #company-name .active, #category-name .active{
         background-color: #DFEBF9;
         border-left: 5px solid saddlebrown;
     }
@@ -444,13 +421,8 @@ span.material-icons{
         text-align: center;
         vertical-align: middle;
     }
-
-    #dark #expList li, #dark #eduList li{
-        border-left: 1px solid #112240;
-        border-right: 1px solid #112240;
-    }
-
-    #light #expList li, #light #eduList li{
+    
+    #expList li, #eduList li{
         border-left: 1px solid #DFEBF9;
         border-right: 1px solid #DFEBF9;
     }
@@ -459,13 +431,8 @@ span.material-icons{
         padding: 4%;
         border-radius: 20px;
     }
-
-    #dark #company-name .active, #dark #category-name .active{
-        background-color: #112240;
-        border-bottom: 5px solid #64ffda;
-    }
     
-    #light #company-name .active, #light #category-name .active{
+    #company-name .active,  #category-name .active{
         background-color: #DFEBF9;
         border-bottom: 5px solid saddlebrown;
     }
