@@ -13,11 +13,11 @@
 }
 
 .expTime{
-    width: 15%;
+    width: 17%;
 }
 
 .expDetails{
-    width: 81%;
+    width: 79%;
     display: flex;
     flex-direction: column;
     text-align: justify;
