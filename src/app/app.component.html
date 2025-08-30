@@ -68,7 +68,17 @@
         <div class="right-section">
             <!--   Experience   -->
             <div @slideY class="container" id="experience">
-                <h2 class="jura-copyright" [style.color]="colorMap.mediumTurquoise" [style.borderBottom]="'1px solid '+colorMap.mediumTurquoise">My Work Experience</h2>
+                <h2 class="jura-copyright" 
+                    [style.color]="colorMap.mediumTurquoise" 
+                    [style.borderBottom]="'1px solid '+colorMap.mediumTurquoise"
+                >
+                    My Work Experience: 
+                    <span 
+                        style="font-size: 22px; margin-left: 1%;"
+                        [style.color]="colorMap.pewterBlue"
+                    >{{years}} years {{months}} month(s)
+                    </span>
+                </h2>
                 <div class="expContainer" (click)="goto_newPage(info.href)" *ngFor="let info of experience_data; index as i">
                     <div class="expTime">
                         <p [style.color]="colorMap.pewterBlue">{{info.timeline}}</p>

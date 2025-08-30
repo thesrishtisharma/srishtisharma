@@ -58,6 +58,11 @@ export class AppComponent implements AfterViewInit, OnInit{
   
   colorMap = colors;
 
+  startDate = new Date(2019, 6, 15); // months are 0 based indexed
+  years: Number = 0;
+  months: Number = 0;
+  days: Number = 0;
+
   experience_data = [
     {
       timeline: "Jan 2024 – Present",
@@ -291,10 +296,13 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   projectsBar: {row: number, data: {name: string, desc: string, skills: string[], ref: string}[]}[] = [];
 
+  private timerId: any;
   ngOnInit(): void {
     this.myName = window.innerWidth < 600 ? '< Srishti />' : this.myName;
     this.animateName();
     this.renderProjects();
+    this.calculateExp();
+    // this.timerId = setInterval(() => this.calculateExp(), 86400000); // update every day
   }
 
   ngAfterViewInit(): void {
@@ -395,5 +403,28 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   goto_newPage(page: string){
     window.open(page, '_blank')
+  }
+
+  
+  calculateExp(){
+    const now = new Date();
+    let years = now.getFullYear() - this.startDate.getFullYear();
+    let months = now.getMonth() - this.startDate.getMonth();
+    let days = now.getDate() - this.startDate.getDate();
+
+    if(days < 0){
+      const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+      days += prevMonth.getDate();
+      months -= 1;
+    }
+
+    if(months < 0){
+      months += 12;
+      years -= 1;
+    }
+
+    this.years = years;
+    this.months = months;
+    this.years = years;
   }
 }
