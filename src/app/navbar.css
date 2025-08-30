@@ -1,0 +1,50 @@
+#navBar{
+    min-height: 40px;
+    max-height: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
+    z-index: 1 !important;
+    /* background-color: white; */
+}
+
+#navUl {
+    z-index: 1 !important;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 96%;
+    /* border-bottom: 1px solid darkslategrey; */
+}
+
+#navUl li { 
+    float: right;
+}
+
+#navUl li a:not(.logo-anchor), ul li #dark-mode-toggle{
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    /* font-size: large; */
+}
+
+.funnel-display-navbar {
+    font-family: "Funnel Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+/** STYLES FOR PHONE SCREENS */
+@media screen and (max-width: 600px) {
+    #navUl li a:not(.logo-anchor), ul li #dark-mode-toggle{
+        padding: 14px 10px;
+    }
+}

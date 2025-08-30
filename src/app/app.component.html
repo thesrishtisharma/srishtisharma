@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-<div id="screen" style="scroll-behavior: smooth;" class="grid-background">
+<div id="screen" style="scroll-behavior: smooth;">
     <!-- navbar -->
     <div @fade id="navBar">
-        <ul id="navUl" style="background-color: rgba(255, 255, 255, 0.51);">
+        <ul id="navUl">
             <li style="float: left;">
-                <a class="funnel-display-name" id="dsc" href="#summary" skipLocationChange [style.color]="navNameColor">
+                <a class="funnel-display-name" id="dsc" href="#summary" skipLocationChange [style.color]="colorMap.mediumTurquoise">
                     {{displayName}} <!--{{myName}}-->
                 </a>
             </li>
@@ -16,138 +16,148 @@
                 [checked]="checked"
                 [disabled]="disabled">
             </mat-slide-toggle></li> -->
-            <li><a class="funnel-display-navbar" href="#work" [style.color]="navbarText">Projects</a></li>
-            <li><a class="funnel-display-navbar" href="#experience" [style.color]="navbarText">Experience</a></li>
-            <li><a class="funnel-display-navbar" href="#education" [style.color]="navbarText">Education</a></li>
+            <li><a class="funnel-display-navbar" href="#work" [style.color]="colorMap.cultured">Projects</a></li>
+            <li><a class="funnel-display-navbar" href="#experience" [style.color]="colorMap.cultured">Experience</a></li>
+            <li><a class="funnel-display-navbar" href="#education" [style.color]="colorMap.cultured">Education</a></li>
         </ul>
     </div>
 
-    <!--    About me    -->
-    <div @slideY class="container" id="summary">
-        <div id="left">
-            <p>
-                <span id="name" [style.color]="s1TextColor">Hey there, I'm <b id="name" class="funnel-display-name" [style.color]="navNameColor">Srishti Sharma</b>.</span>    <br><br>
-                <span id="dsc" [style.color]="dscTextColor">I build things for the web.</span>     <br><br>
-                <span id="s4" [style.color]="s4TextColor">
-                    I am a <b id="s4" [style.color]="navNameColor">Software Engineer</b> - proficient in designing, implementing and maintaining web applications while 
-                    collaborating with cross-functional teams to deliver high quality solutions. Currently, I am growing my 
-                    career journey with <b><span [style.color]="nameTextColor">IBM</span></b>.
+    <div class="section">
+        <!--    About me    -->
+        <div @slideY class="summary">
+            <div id="left">
+                <p>
+                    <span><b id="name" class="funnel-display-name" [style.color]="colorMap.mediumTurquoise">Srishti Sharma</b></span><br>
+                    <span id="dsc" [style.color]="colorMap.lavenderBlue">Software Engineer</span>     <br><br>
+                    <span id="s4" [style.color]="colorMap.wildBlueYonder">
+                        I am a 
+                        <b id="s4" [style.color]="colorMap.cultured">Full Stack Developer</b>
+                        proficient in building reliable & efficient backend and frontend solutions.
+                    </span>
+                </p>
+                <br>
+                <section id="social_handles">
+                    <a target="_blank" href="https://www.linkedin.com/in/the-srishti-sharma/">
+                        <img class="social" src="../assets/images/linkedin.png">
+                    </a>
+                    <a target="_blank" href="https://github.com/thesrishtisharma">
+                        <img class="social" src="../assets/images/github.png">
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/thesrishtisharma/">
+                        <img class="social" src="../assets/images/instagram (1).png">
+                    </a>
+                    <a target="_blank" href="https://t.me/thesrishtisharma">
+                        <img class="social" src="../assets/images/telegram.png">
+                    </a>
+                </section>
+                <br/><br/>
+                <button id="downloadResume" class="btn btn-info" (click)="goto_newPage('https://drive.google.com/file/d/1-OGWnYIDUZUvUx_jBP9imxvVy_h_EeKJ/view?usp=sharing')">
+                    Get My Resume
+                </button>
+            </div>
+
+            <!-- Copyrights -->
+            <div @slideY class="container" id="copyrights">
+                <span class="jura-copyright" [style.color]="colorMap.darkElectricBlue">
+                    {{SrishtiSharma_Copyrights}}
                 </span>
-            </p>
-            <br>
-            <section id="social_handles">
-                <a target="_blank" href="https://www.linkedin.com/in/the-srishti-sharma/">
-                    <img class="social" src="../assets/images/linkedin.png">
-                </a>
-                <a target="_blank" href="https://github.com/thesrishtisharma">
-                    <img class="social" src="../assets/images/github.png">
-                </a>
-                <a target="_blank" href="https://www.instagram.com/thesrishtisharma/">
-                    <img class="social" src="../assets/images/instagram (1).png">
-                </a>
-                <a target="_blank" href="https://t.me/thesrishtisharma">
-                    <img class="social" src="../assets/images/telegram.png">
-                </a>
-            </section>
-            <br>
-
-            <button id="downloadResume" class="btn btn-outline-primary" (click)="goto_newPage('https://drive.google.com/file/d/1-OGWnYIDUZUvUx_jBP9imxvVy_h_EeKJ/view?usp=sharing')">
-                Download my resume
-            </button>
-        </div>
-    </div>
-    
-    <!--   Education   -->
-    <div @slideY class="container" id="education">
-        <h2 class="jura-copyright" [style.color]="navbarText" [style.borderBottom]="'1px solid '+navbarText">My Skills & Education</h2>
-        <div id="education-tab">
-            <div id="category-name">
-                <ul id="eduList">
-                    <li *ngFor="let certificate of education_data" 
-                        [style.color]="nameTextColor"
-                        [class.active]="selectedEducation.name === certificate.name" 
-                        (click)="showEducation(certificate.name)">
-                        <b>{{certificate.name}}</b>
-                    </li>
-                </ul>
-            </div>
-            <div id="education">
-                <section *ngFor="let education of loadEducation.data">
-                    <p id="h5" [style.color]="navbarText">
-                        <b>{{education.cert}}</b> 
-                        <span style="color: #8892b0; float: right;">{{education.completion}}</span>
-                    </p>
-                    <p id="eduDesc" [style.color]="s4TextColor">
-                        &nbsp;&nbsp;{{education.issuer}}
-                        <span *ngIf="education.score" style="color: #8892b0; float: right;">{{education.score}}</span>
-                    </p>
-                    <hr>
-                    <br *ngIf="loadExperience.data.length > 1">
-                </section>
             </div>
         </div>
-    </div>
-    
-    <!--   Experience   -->
-    <div @slideY class="container" id="experience">
-        <h2 class="jura-copyright" [style.color]="navbarText" [style.borderBottom]="'1px solid '+navbarText">My Work Experience</h2>
-        <div id="experience-tab">
-            <div id="company-name">
-                <ul id="expList">
-                    <li *ngFor="let data of experience_data" 
-                        [style.color]="nameTextColor"
-                        [class.active]="selectedExperience.name === data.name" 
-                        (click)="showExperience(data.name)">
-                        <b>{{data.name}}</b>
-                    </li>
-                </ul>
-            </div>
-            <div id="experience">
-                <section *ngFor="let x of loadExperience.data">
-                    <h5 [style.color]="navbarText">
-                        {{x.role}} 
-                        <span [style.color]="nameTextColor"> 
-                            {{atChar}}
-                            <a [href]="loadExperience.href" style="text-decoration: none;" [style.color]="nameTextColor"> 
-                                {{loadExperience.name}}
-                            </a>
-                        </span> 
-                    </h5>
-                    <p style="color: #8892b0">{{x.timeline}}</p>
-                    <p [style.color]="s4TextColor" [innerHTML]="x.desc"></p>
-                    <br *ngIf="loadExperience.data.length > 1">
-                </section>
-            </div>
-        </div>
-    </div>
-
-    <!--   Projects   -->
-    <div @slideY class="container" id="work">
-        <h2 class="jura-copyright" [style.color]="navbarText" [style.borderBottom]="'1px solid '+navbarText">Key Projects</h2>
-
-        <div class="container" id="projects_container" class="row" *ngFor="let row of projectsBar">
-            <div id="project" class="col-sm" *ngFor="let project of row.data">
-                <div class="container">
-                    <div id="icons">
-                        <span id="folder-icon" class="material-symbols-outlined">
-                            folder_open
-                        </span>
         
-                        <a target="_blank" href="{{project.ref}}" *ngIf="project.ref != '#'">
-                            <span id="open-link" class="material-symbols-outlined">
-                                ungroup
-                            </span>
-                        </a>
+
+        <div class="right-section">
+            <!--   Experience   -->
+            <div @slideY class="container" id="experience">
+                <h2 class="jura-copyright" [style.color]="colorMap.mediumTurquoise" [style.borderBottom]="'1px solid '+colorMap.mediumTurquoise">My Work Experience</h2>
+                <div class="expContainer" (click)="goto_newPage(info.href)" *ngFor="let info of experience_data; index as i">
+                    <div class="expTime">
+                        <p [style.color]="colorMap.pewterBlue">{{info.timeline}}</p>
                     </div>
-                    <br>
-                    <div id="project-content">
-                        <h5 [style.color]="nameTextColor">{{project.name}}</h5>
-                        <hr [style.background-color]="navbarText">
-                        <p style="color: #8892b0">{{project.desc}}</p>
-                        <p [style.color]="s4TextColor"><i><b>Skills: </b>{{project.skills}}</i></p>
+                    <div class="expDetails">
+                        <div>
+                            <p>
+                                <span class="role" [style.color]="colorMap.cultured"><b>{{info.role}}</b></span>
+                                <span [style.color]="colorMap.darkElectricBlue"> &nbsp; &nbsp; •</span> 
+                                <span class="company" [style.color]="colorMap.pewterBlue"> {{info.name}}</span> 
+                                <span id="link" class="material-symbols-outlined" [style.color]="colorMap.pewterBlue">arrow_outward</span> 
+                            </p>
+                            <p>
+                                <span id="issuer" [style.color]="colorMap.wildBlueYonder">{{info.desc}}</span>
+                            </p>
+                        </div>
+                        <div class="skills">
+                            <button class="btn btn-outline-info" disabled *ngFor="let skill of info.skills">{{skill}}</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!--   Education   -->
+            <!-- <div @slideY class="container" id="education">
+                <h2 class="jura-copyright" [style.color]="navNameColor" [style.borderBottom]="'1px solid '+navNameColor">My Skills & Education</h2>
+                <div class="eduContainer" *ngFor="let cert of education_data; index as i">
+                    <b [style.color]="nameTextColor">{{cert.name}}</b>
+                    <div class="eduDetails" *ngFor="let info of cert.data">
+                        <p><span [style.color]="s4TextColor">{{info.cert}}</span>
+                        <span style="color: #8892b0; float: right;">{{info.completion}}</span>
+                        <span id="issuer" style="color: #8892b0; float: right;">{{info.issuer}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!--   Projects   -->
+            <div @slideY class="container" id="work">
+                <h2 class="jura-copyright" [style.color]="colorMap.mediumTurquoise" [style.borderBottom]="'1px solid '+colorMap.mediumTurquoise">Key Projects</h2>
+                <div class="projectContainer" (click)="goto_newPage(project.ref)" *ngFor="let project of projects">
+                    <div class="projectImgContainer">
+                        <img class="projectImg" [src]="project.img">
+                    </div>                
+                    <div class="projectContent">
+                        <div>
+                            <p>
+                                <span class="role" [style.color]="colorMap.cultured"><b>{{project.name}}</b></span>
+                                <span id="link" style="float: right;" class="material-symbols-outlined" [style.color]="colorMap.pewterBlue">arrow_outward</span> 
+                            </p>
+                            <p>
+                                <span id="issuer" [style.color]="colorMap.pewterBlue">{{project.desc}}</span>
+                            </p>
+                        </div>
+                        <div class="skills">
+                            <button style="margin-bottom: 1%;" disabled class="btn btn-outline-info" *ngFor="let skill of project.skills">{{skill}}</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="container" id="projects_container" class="row" *ngFor="let row of projectsBar">
+                    <div id="project" class="col-sm" *ngFor="let project of row.data">
+                        <div class="container">
+                            <div id="icons">
+                                <span id="folder-icon" class="material-symbols-outlined" [style.color]="colorMap.darkElectricBlue">
+                                    folder_open
+                                </span>
+                
+                                <a target="_blank" href="{{project.ref}}" *ngIf="project.ref != '#'">
+                                    <span id="open-link" class="material-symbols-outlined" [style.color]="colorMap.pewterBlue">
+                                        ungroup
+                                    </span>
+                                </a>
+                            </div>
+                            <br>
+                            <div id="project-content">
+                                <div>
+                                    <h5 [style.color]="colorMap.white">{{project.name}}</h5>
+                                    <hr [style.background-color]="colorMap.darkElectricBlue">
+                                    <p [style.color]="colorMap.darkElectricBlue">{{project.desc}}</p>
+                                </div>
+                                <div class="skills">
+                                    <button disabled class="btn btn-outline-info" *ngFor="let skill of project.skills">{{skill}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
         </div>
     </div>
 
@@ -160,11 +170,6 @@
         </div>
     </div> -->
     
-    <!-- Copyrights -->
-    <div @slideY class="container" id="copyrights">
-        <span class="jura-copyright" [style.color]="navNameColor">
-            {{SrishtiSharma_Copyrights}}
-        </span>
-    </div>
+    
     <router-outlet></router-outlet>
 </div>

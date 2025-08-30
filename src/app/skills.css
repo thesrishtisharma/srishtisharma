@@ -1,0 +1,44 @@
+.eduContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    gap: 5%;
+}
+
+.eduDetails{
+    margin-top: 1%;
+    margin-left: 10%;
+}
+
+#issuer{
+    margin-right: 5%;
+}
+
+/* For desktop: */
+@media screen and (min-width: 1000px){
+    #education-tab{
+        display: flex;
+        justify-content: space-between;
+        padding: 5%;
+        margin-left: 10%;
+    }
+}
+
+
+/* For tablets: */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+    /** Experience Div **/
+    #education-tab{
+        display: flex;
+        justify-content: space-between;
+        padding: 1%;
+    }
+}
+
+/* For phones: */
+@media screen and (max-width: 600px) {
+
+}

@@ -1,0 +1,53 @@
+#experience{
+    margin-bottom: 2%;
+}
+
+.expContainer{
+    display: flex;
+    gap: 2%;
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+.expTime{
+    width: 15%;
+}
+
+.expDetails{
+    width: 81%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.expContainer:hover{
+    background-color: #111f45;
+    border-radius: 10px;
+}
+
+#link{
+    font-size: 15px;
+    margin-left: 2%;
+}
+
+.role, .company{
+    font-size: 20px;
+}
+
+.skills{
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+}
+
+.skills button{
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* For desktop: */
+@media screen and (min-width: 1000px){
+}

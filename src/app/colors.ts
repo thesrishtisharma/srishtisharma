@@ -1,0 +1,17 @@
+export const colors = {
+    seaBlue: "#007397",
+    mediumTurquoise: "#55d9d0",
+    cultured: "#f8f8f8",
+    orange: "#F59E0B",
+    wildBlueYonder: "#a8b2d1",
+    lavenderWeb: "#e6f1ff",
+    black: "black",
+    white: "white",
+    midnightBlue: "midnightBlue",
+    saddlebrown: "saddlebrown",
+    lavenderBlue: "#ccd6f6",
+    aquaMarine: "#64ffda",
+    yankesBlue: "#172a45",
+    pewterBlue: "#939ebe",
+    darkElectricBlue: "#5d6479",
+}
