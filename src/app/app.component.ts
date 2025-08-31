@@ -274,7 +274,7 @@ export class AppComponent implements AfterViewInit, OnInit{
     // this.timerId = setInterval(() => this.calculateExp(), 86400000); // update every day
   }
   
-  mospi: string = this.smallScreen ? "MoSPI" : "Ministry of Statistics & Programme Implementation";
+  mospi: string = window.innerWidth < 600 ? "MoSPI" : "Ministry of Statistics & Programme Implementation";
   experience_data = [
     {
       timeline: "Jan 2024 – Present",
