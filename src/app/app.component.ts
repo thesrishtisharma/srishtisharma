@@ -37,10 +37,8 @@ interface EducationCategory {
 })
 export class AppComponent implements AfterViewInit, OnInit{
   title = 'Srishti Sharma';
-  mospi: string = "Ministry of Statistics & Programme Implementation";
-  constructor(private renderer: Renderer2){
-    this.mospi = window.innerWidth < 600 ? 'MoSPI' : "Ministry of Statistics & Programme Implementation";
-  }
+  mospi: string = "";
+  constructor(private renderer: Renderer2){ }
 
   @ViewChild('darkModeSwitch', { read: ElementRef }) element: ElementRef | undefined;
 
@@ -48,7 +46,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   displayName: string = "";
   displayedName: string[] = [];
 
-  SrishtiSharma_Copyrights: string = "© 2025. Srishti Sharma. All rights reserved."
+  SrishtiSharma_Copyrights: string = "© "+new Date().getFullYear()+". Srishti Sharma. All rights reserved."
 
   atChar: string = "@";
 
@@ -90,7 +88,7 @@ export class AppComponent implements AfterViewInit, OnInit{
     },
     {
       timeline: "June 2018 – Aug 2018",
-      name: "Ministry of Statistics & Programme Implementation", 
+      name: this.mospi, 
       href: "https://www.mospi.gov.in/",
       role: "Web Development Intern", 
       desc: "Worked as a web development intern to revamp one of the organization's internal website.",
@@ -296,9 +294,13 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   projectsBar: {row: number, data: {name: string, desc: string, skills: string[], ref: string}[]}[] = [];
 
-  private timerId: any;
+  smallScreen: boolean = false;
+  
   ngOnInit(): void {
-    this.myName = window.innerWidth < 600 ? '< Srishti />' : this.myName;
+    this.smallScreen = window.innerWidth < 600;
+    this.myName = this.smallScreen ? '< Srishti />' : this.myName;
+    this.mospi = this.smallScreen ? 'MoSPI' : "Ministry of Statistics & Programme Implementation";
+    console.log(this.smallScreen);
     this.animateName();
     this.renderProjects();
     this.calculateExp();

@@ -29,12 +29,7 @@
 }
 
 #link{
-    font-size: 15px;
     margin-left: 2%;
-}
-
-.role, .company{
-    font-size: 20px;
 }
 
 .skills{
@@ -50,4 +45,26 @@
 
 /* For desktop: */
 @media screen and (min-width: 1000px){
+    .role, .company{
+        font-size: 20px;
+    }
+
+    #link{
+        font-size: 15px;
+    }
+}
+
+/** STYLES FOR PHONE SCREENS */
+@media screen and (max-width: 600px) {
+    .role, .company{
+        font-size: 16px;
+    }
+
+    .expTime, #link{
+        font-size: 12px;
+    }
+
+    #desc{
+        font-size: 14px;
+    }
 }
