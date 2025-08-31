@@ -2,31 +2,6 @@
     padding-bottom: 15%;
 }
 
-/* #projects_container{
-    margin-left: 1%;
-    margin-right: 1%;
-    display: flex;
-    gap: 1%;
-}
-
-#project{
-    width: 20rem;
-    margin-bottom: 1%;
-    margin-top: 1%;
-    border: 1px solid #111f45;
-    padding: 1%;
-    
-}
-
-#project:hover{
-    background-color: #111f45;
-}
-
-#icons{
-    display: flex;
-    justify-content: space-between;
-} */
-
 .projectContainer{
     margin-top: 2%;
     margin-left: 2%;
@@ -58,6 +33,10 @@
     object-fit: contain;
 }
 
+.projectImg:hover{
+    transform: scale(120%);
+}
+
 #folder-icon{
     font-size: 36px;
 }
@@ -68,4 +47,19 @@
     vertical-align: top;
     margin-left: 5%;
     padding-top: 5%;
+}
+
+/** STYLES FOR PHONE SCREENS */
+@media screen and (max-width: 600px) {
+    .role, .company{
+        font-size: 16px;
+    }
+
+    .expTime, #link{
+        font-size: 12px;
+    }
+
+    #desc{
+        font-size: 14px;
+    }
 }

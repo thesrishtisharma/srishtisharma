@@ -57,7 +57,7 @@
             </div>
 
             <!-- Copyrights -->
-            <div @slideY class="container" id="copyrights">
+            <div @slideY class="container" id="copyrights" *ngIf="!smallScreen">
                 <span class="jura-copyright" [style.color]="colorMap.darkElectricBlue">
                     {{SrishtiSharma_Copyrights}}
                 </span>
@@ -92,7 +92,7 @@
                                 <span id="link" class="material-symbols-outlined" [style.color]="colorMap.pewterBlue">arrow_outward</span> 
                             </p>
                             <p>
-                                <span id="issuer" [style.color]="colorMap.wildBlueYonder">{{info.desc}}</span>
+                                <span id="desc" [style.color]="colorMap.wildBlueYonder">{{info.desc}}</span>
                             </p>
                         </div>
                         <div class="skills">
@@ -130,7 +130,7 @@
                                 <span id="link" style="float: right;" class="material-symbols-outlined" [style.color]="colorMap.pewterBlue">arrow_outward</span> 
                             </p>
                             <p>
-                                <span id="issuer" [style.color]="colorMap.pewterBlue">{{project.desc}}</span>
+                                <span id="desc" [style.color]="colorMap.pewterBlue">{{project.desc}}</span>
                             </p>
                         </div>
                         <div class="skills">
@@ -167,7 +167,12 @@
                     </div>
                 </div> -->
             </div>
-
+            <!-- Copyrights -->
+            <div @slideY class="container" id="copyrights" *ngIf="smallScreen">
+                <span class="jura-copyright" [style.color]="colorMap.darkElectricBlue">
+                    {{SrishtiSharma_Copyrights}}
+                </span>
+            </div>
         </div>
     </div>
 
