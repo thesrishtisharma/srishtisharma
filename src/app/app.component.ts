@@ -74,7 +74,7 @@ export class AppComponent implements AfterViewInit, OnInit{
       desc: "My professional portfolio webapp",
       skills: ["Angular", "HTML", "CSS", "Bootstrap"],
       ref: "#",
-      img: this.imgDir + "anaplanConnector.png"
+      img: this.imgDir + "myPortfolio.png"
     },
     {
       name: "Anaplan Connector",
