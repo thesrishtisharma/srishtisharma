@@ -37,7 +37,6 @@ interface EducationCategory {
 })
 export class AppComponent implements AfterViewInit, OnInit{
   title = 'Srishti Sharma';
-  mospi: string = "";
   constructor(private renderer: Renderer2){ }
 
   @ViewChild('darkModeSwitch', { read: ElementRef }) element: ElementRef | undefined;
@@ -61,43 +60,6 @@ export class AppComponent implements AfterViewInit, OnInit{
   months: Number = 0;
   days: Number = 0;
 
-  experience_data = [
-    {
-      timeline: "Jan 2024 – Present",
-      name: "IBM", 
-      href: "https://www.ibm.com/in-en",
-      role: "Software Engineer", 
-      desc: "Working as a Full Stack Developer in an Automotive project (under finance domain) built on a secure & scalable microservices architecture - serving millions of users across US & Canada. Built and maintained several critical features end-to-end.",
-      skills: ["Java", "Spring Boot", "Angular", "Git", "IBM DB2", "Rest APIs", "Swagger"]
-    },
-    {
-      timeline: "Jan 2021 – Dec 2023",
-      name: "Wipro", 
-      href: "https://www.wipro.com/",
-      role: "Software Engineer", 
-      desc: "Built APIs for handling data integrations between HTTP applications and Anaplan (Financial planning & analysis tool). Documented low level integration designs & Open API specifications. Suggested best API choice to go with in order to integrate with the product (since by design, it provided 2 APIs supporting bulk data & transactional data respectively)",
-      skills: ["Java", "Spring boot", "Anaplan", "Google Cloud Platform", "Rest APIs", "Swagger"]
-    },
-    {
-      timeline: "July 2019 – Jan 2021",
-      name: "Wipro", 
-      href: "https://www.wipro.com/",
-      role: "Sr. Technical Support Engineer", 
-      desc: "Supported clients with respect to their storage server related issues, primarily Dell EMC's Centera - CAS Storage product. Provided root cause analysis and handled escalations. Helped with knowledge transfers to new team members.",
-      skills: ["Linux", "Shell scripting", "Communication", "CAS Storage"]
-    },
-    {
-      timeline: "June 2018 – Aug 2018",
-      name: this.mospi, 
-      href: "https://www.mospi.gov.in/",
-      role: "Web Development Intern", 
-      desc: "Worked as a web development intern to revamp one of the organization's internal website.",
-      skills: ["HTML5", "CSS3", "JS", "PHP", "AJAX"]
-    }
-  ];
-  loadExperience = this.experience_data[0];
-  selectedExperience = {name: this.loadExperience.name};
-
   //  new ProjectStructure(name, desc, skills, ref) 
   imgDir: string = "../assets/images/projects/";
   projects = [{
@@ -106,6 +68,13 @@ export class AppComponent implements AfterViewInit, OnInit{
       skills: ["Angular", "Google APIs", "Cloud Storage"],
       ref: "https://sccommunication.vercel.app/",
       img: this.imgDir + "scCommunication.png"
+    },
+    {
+      name: "Portfolio Application",
+      desc: "My professional portfolio webapp",
+      skills: ["Angular", "HTML", "CSS", "Bootstrap"],
+      ref: "#",
+      img: this.imgDir + "anaplanConnector.png"
     },
     {
       name: "Anaplan Connector",
@@ -299,13 +268,47 @@ export class AppComponent implements AfterViewInit, OnInit{
   ngOnInit(): void {
     this.smallScreen = window.innerWidth < 600;
     this.myName = this.smallScreen ? '< Srishti />' : this.myName;
-    this.mospi = this.smallScreen ? 'MoSPI' : "Ministry of Statistics & Programme Implementation";
-    console.log(this.smallScreen);
     this.animateName();
     this.renderProjects();
     this.calculateExp();
     // this.timerId = setInterval(() => this.calculateExp(), 86400000); // update every day
   }
+  
+  mospi: string = this.smallScreen ? "MoSPI" : "Ministry of Statistics & Programme Implementation";
+  experience_data = [
+    {
+      timeline: "Jan 2024 – Present",
+      name: "IBM", 
+      href: "https://www.ibm.com/in-en",
+      role: "Software Engineer", 
+      desc: "Working as a Full Stack Developer in an Automotive project (under finance domain) built on a secure & scalable microservices architecture - serving millions of users across US & Canada. Built and maintained several critical features end-to-end.",
+      skills: ["Java", "Spring Boot", "Angular", "Git", "IBM DB2", "Rest APIs", "Swagger"]
+    },
+    {
+      timeline: "Jan 2021 – Dec 2023",
+      name: "Wipro", 
+      href: "https://www.wipro.com/",
+      role: "Software Engineer", 
+      desc: "Built APIs for handling data integrations between HTTP applications and Anaplan (Financial planning & analysis tool). Documented low level integration designs & Open API specifications. Suggested best API choice to go with in order to integrate with the product (since by design, it provided 2 APIs supporting bulk data & transactional data respectively)",
+      skills: ["Java", "Spring boot", "Anaplan", "Google Cloud Platform", "Rest APIs", "Swagger"]
+    },
+    {
+      timeline: "July 2019 – Jan 2021",
+      name: "Wipro", 
+      href: "https://www.wipro.com/",
+      role: "Sr. Technical Support Engineer", 
+      desc: "Supported clients with respect to their storage server related issues, primarily Dell EMC's Centera - CAS Storage product. Provided root cause analysis and handled escalations. Helped with knowledge transfers to new team members.",
+      skills: ["Linux", "Shell scripting", "Communication", "CAS Storage"]
+    },
+    {
+      timeline: "June 2018 – Aug 2018",
+      name: this.mospi, 
+      href: "https://www.mospi.gov.in/",
+      role: "Web Development Intern", 
+      desc: "Worked as a web development intern to revamp one of the organization's internal website.",
+      skills: ["HTML5", "CSS3", "JS", "PHP", "AJAX"]
+    }
+  ];
 
   ngAfterViewInit(): void {
     this.setIcon();
@@ -375,11 +378,6 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   reload(){
     window.location.reload();
-  }
-
-  showExperience(name: string){
-    this.selectedExperience = {name};
-    this.loadExperience = this.experience_data.find(item => item.name === name)!;
   }
 
   showEducation(name: string){

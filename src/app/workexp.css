@@ -46,7 +46,7 @@
 /* For desktop: */
 @media screen and (min-width: 1000px){
     .role, .company{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #link{
