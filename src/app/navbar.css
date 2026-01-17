@@ -4,6 +4,7 @@
     padding-left: 2%;
     padding-right: 2%;
     z-index: 1 !important;
+    width: 100vw;
     /* background-color: white; */
 }
 

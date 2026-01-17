@@ -60,6 +60,8 @@ export class AppComponent implements AfterViewInit, OnInit{
   months: Number = 0;
   days: Number = 0;
 
+  skills: string[] = [];
+
   //  new ProjectStructure(name, desc, skills, ref) 
   imgDir: string = "../assets/images/projects/";
   projects = [{
@@ -271,13 +273,27 @@ export class AppComponent implements AfterViewInit, OnInit{
     this.animateName();
     this.renderProjects();
     this.calculateExp();
+    this.populateSkills();
     // this.timerId = setInterval(() => this.calculateExp(), 86400000); // update every day
+  }
+
+  populateSkills(){
+    this.skills = ["Java", "Angular", "Spring Boot", "Microservices", "Rest APIs", "IBM's DB2", "SQL", "Google Cloud Platform", 
+                  "Swagger Open APIs", "Figma", "GIT", "Linux"];
   }
   
   mospi: string = window.innerWidth < 600 ? "MoSPI" : "Ministry of Statistics & Programme Implementation";
   experience_data = [
     {
-      timeline: "Jan 2024 – Present",
+      timeline: "Jan 2026 – Present",
+      name: "HBK - Hottinger Brüel & Kjær", 
+      href: "https://www.hbkworld.com",
+      role: "Software Engineer", 
+      desc: "My bad fam, HBK gig's bussin'—hold tight while I cook up the deets. No cap, it's fire🔥.",
+      skills: ["Java", "Spring Boot", "Angular", "Rest APIs"]
+    },
+    {
+      timeline: "Jan 2024 – Jan 2026",
       name: "IBM", 
       href: "https://www.ibm.com/in-en",
       role: "Software Engineer", 

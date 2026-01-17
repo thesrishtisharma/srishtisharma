@@ -1,22 +1,32 @@
 #screen{
+    height: 100%;
     background-color: #0f1729;
     /* background-color: rgb(255, 255, 255); */
+}
+
+main{
+    margin-top: 6%;
+    background-color: #0f1729;
 }
 
 .section{
     margin-top: 4%;
 }
 
+.srishProjects{
+    width: 100vw;
+}
+
 /** FOR DESKTOP SCREENS */
 @media screen and (min-width: 1000px) {
     #screen{
-        height: 100vh;
-        overflow-y: hidden;
+        /* height: 100vh; */
+        /* overflow-x: hidden; */
     }
 
     .section{
         display: flex;
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     .summary{
@@ -25,5 +35,23 @@
 
     .right-section{
         overflow-y: scroll;
+    }
+
+    #logo-img{
+        height: 60px;
+    }
+}
+
+/** FOR TABLETS SCREENS */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+    #logo-img{
+        height: 40px;
+    }
+}
+
+/* FOR PHONE SCREENS */
+@media screen and (max-width: 600px) {
+    #logo-img{
+        height: 25px;
     }
 }

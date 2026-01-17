@@ -3,20 +3,23 @@
 
 /* width */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 0;
+    background: transparent;
   }
    
   ::-webkit-scrollbar-track {
-    background: transparent; /* Set the background of the track to transparent */
+    background: rgba(0, 0, 0, 0) !important; /* Fully transparent */
+    border: none;
+    border-radius: 0;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: midnightblue;
+    background: rgb(212, 212, 255);
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #4144a3;
+    background: #dfe0ff;
   }
   /* ::-webkit-scrollbar {
     display: none;

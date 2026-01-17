@@ -1,6 +1,6 @@
 export const colors = {
     seaBlue: "#007397",
-    mediumTurquoise: "#55d9d0",
+    mediumTurquoise: "#00FFFF",
     cultured: "#f8f8f8",
     orange: "#F59E0B",
     wildBlueYonder: "#a8b2d1",
