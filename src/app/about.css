@@ -9,14 +9,29 @@
     /* background-color: antiquewhite; */
 }
 
-#downloadResume{
-    font-size: 18px;
+.main{
+    min-height: 65vh;
+    max-height: 65vh;
+    max-width: 100%;
+    /* background-image: url("../assets/images/UnEdited.png"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(rgba(173, 216, 255, 0.5), rgba(25, 25, 112, 0.5)), url("../assets/images/UnEdited.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#social_handles {
-    padding-left: 1%;
+#social_handles{
+    width: 100%;
     display: flex;
-    gap: 2%;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+#downloadResume{
+    font-size: 18px;
 }
 
 /** FOR DESKTOP SCREENS */
@@ -29,8 +44,18 @@
         padding-top: 5%;
     }
 
+    .aboutSrishti{
+        width: 50%;
+        padding: 3%;
+    }
+
     .social{
-        height: 25px;
+        height: 40px;
+    }
+
+    #social-icons {
+        display: flex;
+        gap: 5%;
     }
 }
 
@@ -43,31 +68,36 @@
         padding-top: 20%
     }
 
-    #social_handles a{
-        margin-left: 2%;
-        margin-right: 2%;
+    #social-icons {
+        display: flex;
+        gap: 5%;
     }
 
     .social{
-        height: 50px;
+        height: 35px;
     }
 }
 
 /* FOR PHONE SCREENS */
 @media screen and (max-width: 600px) {
+    .aboutSrishti{
+        width: 100vw;
+        padding: 3%;
+    }
+
     .summary{
         display: flex;
         flex-direction: column;
         padding-top: 30%;
         padding-bottom: 30%;
     }
-    
-    #social_handles a{
-        margin-left: 2%;
-        margin-right: 2%;
-    }
 
     .social{
-        height: 30px;
+        height: 25px;
+    }
+
+    #social-icons {
+        display: flex;
+        gap: 6%;
     }
 }

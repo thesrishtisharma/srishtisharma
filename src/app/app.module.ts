@@ -10,13 +10,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-@NgModule({ declarations: [
+import { CdkDrag } from '@angular/cdk/drag-drop'
+
+@NgModule({ 
+    declarations: [
         AppComponent,
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent], 
+    imports: [
+        BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         MatSlideToggleModule,
         MatIconModule,
-        MatButtonModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatButtonModule,
+        CdkDrag
+    ], 
+    providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

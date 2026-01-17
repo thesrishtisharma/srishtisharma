@@ -1,5 +1,64 @@
-#work{
-    padding-bottom: 15%;
+#work, #skill{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #0f1729;
+}
+
+#proj{
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+    background-color: #0f1729;
+}
+
+.projects{
+    width: 100%;
+}
+
+.row{
+    overflow-x: auto;
+}
+
+.card{
+    padding: 10px;
+    margin-left: .2%;
+    margin-right: .2%;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.card-border{
+    border-style: solid;
+    border-width: 3px 0 3px 0; /* Left + right borders */
+    border-image: linear-gradient(to right, rgb(238, 237, 237), rgba(206, 205, 205, 0)) 1;
+    border-image-slice: 1; /* Single value applies to all sides */
+}
+
+.card-img-top {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card-img-top:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Optional: Card lift effect on hover */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2) !important;
+  background-color: gainsboro;
+  border: 1px solid grey;
+  border-radius: 0;
+}
+
+.card-title:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#card-style{
+    width: 350px;
 }
 
 .projectContainer{
@@ -62,4 +121,20 @@
     #desc{
         font-size: 14px;
     }
+ 
+    #card-style{
+        width: 250px;
+    }
+}
+
+/** FOR DESKTOP SCREENS */
+@media screen and (min-width: 1000px) {
+    #card-style{
+        width: 350px;
+    }
+}
+
+/** FOR TABLETS SCREENS */
+@media screen and (min-width: 600px) and (max-width: 999px) {
+
 }
