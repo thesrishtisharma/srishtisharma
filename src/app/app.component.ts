@@ -15,25 +15,26 @@ interface EducationCategory {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', './layout.css', './navbar.css', './about.css', './skills.css', './workexp.css', './project.css'],
-  animations: [
-    trigger('fade', [
-      transition('void => *', [
-        style({
-          opacity: 0
-        }),
-        animate(2000)
-      ])
-    ]),
-    trigger('slideY', [
-      transition('void => *', [
-        style({transform: 'translateY(200px)'}),
-        animate(2000)
-      ])
-    ])
-  ]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css', './layout.css', './navbar.css', './about.css', './skills.css', './workexp.css', './project.css'],
+    animations: [
+        trigger('fade', [
+            transition('void => *', [
+                style({
+                    opacity: 0
+                }),
+                animate(2000)
+            ])
+        ]),
+        trigger('slideY', [
+            transition('void => *', [
+                style({ transform: 'translateY(200px)' }),
+                animate(2000)
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class AppComponent implements AfterViewInit, OnInit{
   title = 'Srishti Sharma';
