@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
+<script>
+    // const checkbox = document.getElementById("checkbox");
+    // checkbox.addEventListener("change", () => {
+    //     document.body.classList.toggle("dark")
+    // })
+</script>
 <div id="screen" style="scroll-behavior: smooth;">
     <!-- navbar -->
     <div @fade id="navBar">
@@ -19,6 +25,14 @@
                 [checked]="checked"
                 [disabled]="disabled">
             </mat-slide-toggle></li> -->
+            <li>
+                <input #themeSelector type="checkbox" class="checkbox" id="checkbox" (change)="changeTheme($event)">
+                <label for="checkbox" class="checkbox-label">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                    <span class="ball"></span>
+                </label>
+            </li>
             <li><a class="funnel-display-navbar" href="#proj" [style.color]="colorMap.cultured">Projects</a></li>
             <li><a class="funnel-display-navbar" href="#experience" [style.color]="colorMap.cultured">Experience</a></li>
             <li><a class="funnel-display-navbar" href="#skill" [style.color]="colorMap.cultured">Skills</a></li>

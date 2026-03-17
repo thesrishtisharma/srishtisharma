@@ -328,47 +328,17 @@ export class AppComponent implements AfterViewInit, OnInit{
   ];
 
   ngAfterViewInit(): void {
-    this.setIcon();
     // this.applyTheme();
   }
 
-  setIcon() {
-    if (this.element) {
-      const targetSpan: HTMLElement = this.element.nativeElement.querySelector('.mat-slide-toggle-thumb');
-      while (targetSpan.firstChild) {
-        targetSpan.firstChild.remove();
-      }
-      const elem = this.renderer.createElement('span');
-      const icon = this.checked ? 'light_mode' : 'dark_mode';
-      elem.setAttribute('class', 'material-icons');
-      elem.textContent = icon
-      targetSpan.appendChild(elem);
-
-      if(icon == 'dark_mode'){
-        elem.setAttribute('style', 'color: white;')
-      }
-    }
+  changeTheme(event: Event) {
+    const isDark = (event.target as HTMLInputElement).checked;
+    this.toggleTheme(isDark);
   }
 
-  changeTheme() {
-    this.checked = !this.checked;
-    // console.log('I am now ', this.checked);
-    this.setIcon();
-    // this.applyTheme();
+  toggleTheme(isDark: boolean){
+    console.log(isDark)
   }
-
-  // applyTheme(){
-  //   this.mode = this.checked ? "dark" : "light";
-  //   this.textColor = this.checked ? colors.white : colors.black;
-  //   this.s1TextColor = this.checked ? colors.wildBlueYonder : colors.black;
-  //   this.nameTextColor = this.checked ? colors.lavenderWeb : colors.midnightBlue; 
-  //   this.dscTextColor = this.checked ? colors.lavenderBlue : colors.midnightBlue;
-  //   this.s4TextColor = this.checked ? colors.wildBlueYonder : colors.black;
-  //   this.btnClass = this.checked ? "btn-light" : "btn-info";
-  //   this.navbarText = this.checked ? colors.aquaMarine : colors.saddlebrown
-  //   this.navbarColor = this.checked ? colors.black : colors.white;
-  //   this.navNameColor = this.checked ? colors.white : colors.midnightBlue;
-  // }
   
   animateName(): void{
     let idx = 0;

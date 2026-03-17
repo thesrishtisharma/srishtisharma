@@ -27,13 +27,10 @@
     float: right;
 }
 
-#navUl li a:not(.logo-anchor), ul li #dark-mode-toggle{
-    display: block;
-    text-align: center;
+#navUl li{
+    display: flex;
+    align-items: center;
     padding: 14px 16px;
-    text-decoration: none;
-    font-weight: bold;
-    /* font-size: large; */
 }
 
 .funnel-display-navbar {
@@ -42,7 +39,6 @@
     font-weight: 300;
     font-style: normal;
 }
-
 
 /** STYLES FOR PHONE SCREENS */
 @media screen and (max-width: 600px) {
