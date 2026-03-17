@@ -15,25 +15,26 @@ interface EducationCategory {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', './layout.css', './navbar.css', './about.css', './skills.css', './workexp.css', './project.css'],
-  animations: [
-    trigger('fade', [
-      transition('void => *', [
-        style({
-          opacity: 0
-        }),
-        animate(2000)
-      ])
-    ]),
-    trigger('slideY', [
-      transition('void => *', [
-        style({transform: 'translateY(200px)'}),
-        animate(2000)
-      ])
-    ])
-  ]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css', './layout.css', './navbar.css', './about.css', './skills.css', './workexp.css', './project.css'],
+    animations: [
+        trigger('fade', [
+            transition('void => *', [
+                style({
+                    opacity: 0
+                }),
+                animate(2000)
+            ])
+        ]),
+        trigger('slideY', [
+            transition('void => *', [
+                style({ transform: 'translateY(200px)' }),
+                animate(2000)
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class AppComponent implements AfterViewInit, OnInit{
   title = 'Srishti Sharma';
@@ -54,6 +55,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   disabled = false;
   
   colorMap = colors;
+  currentTheme = this.colorMap.lightMode;
 
   startDate = new Date(2019, 6, 15); // months are 0 based indexed
   years: Number = 0;
@@ -326,48 +328,17 @@ export class AppComponent implements AfterViewInit, OnInit{
     }
   ];
 
-  ngAfterViewInit(): void {
-    this.setIcon();
-    // this.applyTheme();
+  ngAfterViewInit(): void {}
+
+  setCurrentTheme(event: Event) {
+    const isDark = (event.target as HTMLInputElement).checked;
+    this.currentTheme = isDark ? this.colorMap.darkMode : this.colorMap.lightMode;
+    this.toggleTheme(isDark);
   }
 
-  setIcon() {
-    if (this.element) {
-      const targetSpan: HTMLElement = this.element.nativeElement.querySelector('.mat-slide-toggle-thumb');
-      while (targetSpan.firstChild) {
-        targetSpan.firstChild.remove();
-      }
-      const elem = this.renderer.createElement('span');
-      const icon = this.checked ? 'light_mode' : 'dark_mode';
-      elem.setAttribute('class', 'material-icons');
-      elem.textContent = icon
-      targetSpan.appendChild(elem);
-
-      if(icon == 'dark_mode'){
-        elem.setAttribute('style', 'color: white;')
-      }
-    }
+  toggleTheme(isDark: boolean){
+    console.log(isDark)
   }
-
-  changeTheme() {
-    this.checked = !this.checked;
-    // console.log('I am now ', this.checked);
-    this.setIcon();
-    // this.applyTheme();
-  }
-
-  // applyTheme(){
-  //   this.mode = this.checked ? "dark" : "light";
-  //   this.textColor = this.checked ? colors.white : colors.black;
-  //   this.s1TextColor = this.checked ? colors.wildBlueYonder : colors.black;
-  //   this.nameTextColor = this.checked ? colors.lavenderWeb : colors.midnightBlue; 
-  //   this.dscTextColor = this.checked ? colors.lavenderBlue : colors.midnightBlue;
-  //   this.s4TextColor = this.checked ? colors.wildBlueYonder : colors.black;
-  //   this.btnClass = this.checked ? "btn-light" : "btn-info";
-  //   this.navbarText = this.checked ? colors.aquaMarine : colors.saddlebrown
-  //   this.navbarColor = this.checked ? colors.black : colors.white;
-  //   this.navNameColor = this.checked ? colors.white : colors.midnightBlue;
-  // }
   
   animateName(): void{
     let idx = 0;
