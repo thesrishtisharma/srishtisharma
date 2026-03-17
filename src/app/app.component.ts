@@ -55,6 +55,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   disabled = false;
   
   colorMap = colors;
+  currentTheme = this.colorMap.lightMode;
 
   startDate = new Date(2019, 6, 15); // months are 0 based indexed
   years: Number = 0;
@@ -327,12 +328,11 @@ export class AppComponent implements AfterViewInit, OnInit{
     }
   ];
 
-  ngAfterViewInit(): void {
-    // this.applyTheme();
-  }
+  ngAfterViewInit(): void {}
 
-  changeTheme(event: Event) {
+  setCurrentTheme(event: Event) {
     const isDark = (event.target as HTMLInputElement).checked;
+    this.currentTheme = isDark ? this.colorMap.darkMode : this.colorMap.lightMode;
     this.toggleTheme(isDark);
   }
 

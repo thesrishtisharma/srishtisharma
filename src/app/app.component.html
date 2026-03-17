@@ -7,10 +7,10 @@
     //     document.body.classList.toggle("dark")
     // })
 </script>
-<div id="screen" style="scroll-behavior: smooth;">
+<div id="screen" style="scroll-behavior: smooth;" [style.backgroundColor]="currentTheme.navBar">
     <!-- navbar -->
     <div @fade id="navBar">
-        <ul id="navUl">
+        <ul id="navUl" [style.backgroundColor]="currentTheme.navBar">
             <li style="float: left;">
                 <!-- <a class="funnel-display-name" id="dsc" href="#summary" skipLocationChange [style.color]="colorMap.mediumTurquoise">
                     {{displayName}}
@@ -26,21 +26,21 @@
                 [disabled]="disabled">
             </mat-slide-toggle></li> -->
             <li>
-                <input #themeSelector type="checkbox" class="checkbox" id="checkbox" (change)="changeTheme($event)">
-                <label for="checkbox" class="checkbox-label">
+                <input #themeSelector type="checkbox" class="checkbox" id="checkbox" (change)="setCurrentTheme($event)">
+                <label for="checkbox" class="checkbox-label" [style.backgroundColor]="currentTheme.toggleLabel">
                     <i class="fa-solid fa-moon"></i>
                     <i class="fa-solid fa-sun"></i>
                     <span class="ball"></span>
                 </label>
             </li>
-            <li><a class="funnel-display-navbar" href="#proj" [style.color]="colorMap.cultured">Projects</a></li>
-            <li><a class="funnel-display-navbar" href="#experience" [style.color]="colorMap.cultured">Experience</a></li>
-            <li><a class="funnel-display-navbar" href="#skill" [style.color]="colorMap.cultured">Skills</a></li>
+            <li><a class="funnel-display-navbar" href="#proj" [style.color]="currentTheme.navText">Projects</a></li>
+            <li><a class="funnel-display-navbar" href="#experience" [style.color]="currentTheme.navText">Experience</a></li>
+            <li><a class="funnel-display-navbar" href="#skill" [style.color]="currentTheme.navText">Skills</a></li>
         </ul>
     </div>
 
     <!-- about me-->
-    <main @slideY id="aboutMe">
+    <main @slideY id="aboutMe" [style.backgroundColor]="currentTheme.navBar">
         <div class="main">
             <section class="aboutSrishti">
                 <p>
@@ -48,7 +48,7 @@
                     <span id="dsc" [style.color]="colorMap.lavenderBlue">Software Engineer</span>     <br><br>
                     <span id="s4" [style.color]="colorMap.wildBlueYonder">
                         I am a 
-                        <b id="s4" [style.color]="colorMap.cultured">Full Stack Developer</b>
+                        <b id="s4" [style.color]="colorMap.role">Full Stack Developer</b>
                         proficient in building reliable & efficient backend and frontend solutions.
                     </span>
                 </p>
@@ -76,10 +76,10 @@
     </main>
 
     <!-- My Skills -->
-    <div @slideY id="skill">
+    <div @slideY id="skill" [style.backgroundColor]="currentTheme.navBar">
         <div class="container">
-            <h2 class="jura-copyright" [style.color]="colorMap.mediumTurquoise" 
-                [style.borderBottom]="'1px solid '+colorMap.mediumTurquoise">Good at</h2>
+            <h2 class="jura-copyright" [style.color]="currentTheme.blockHeading" 
+                [style.borderBottom]="'1px solid '+currentTheme.blockHeading">Good at</h2>
             
             <div class="d-flex flex-wrap gap-3 justify-content-start container skill-btn">
                 <button class="btn btn-outline-info flex-fill text-center px-4 py-2 mx-2 mb-2" 
@@ -93,9 +93,10 @@
 
 
      <!-- My Projects -->
-    <div @slideY id="proj">
+    <div @slideY id="proj" [style.backgroundColor]="currentTheme.navBar">
         <div class="container">
-            <h2 class="jura-copyright" [style.color]="colorMap.mediumTurquoise" [style.borderBottom]="'1px solid '+colorMap.mediumTurquoise">Some of my projects</h2>
+            <h2 class="jura-copyright" [style.color]="currentTheme.blockHeading" 
+                [style.borderBottom]="'1px solid '+currentTheme.blockHeading">Some of my projects</h2>
         </div>
         <section class="srishProjects">
             <div class="projects container">
@@ -123,7 +124,7 @@
      
 
     <!-- Copyrights -->
-    <div @slideY id="copyrights">  <!--*ngIf="smallScreen"-->
+    <div @slideY id="copyrights" [style.backgroundColor]="currentTheme.navBar">  <!--*ngIf="smallScreen"-->
         <span class="jura-copyright" [style.color]="colorMap.darkElectricBlue">
             {{SrishtiSharma_Copyrights}}
         </span>
