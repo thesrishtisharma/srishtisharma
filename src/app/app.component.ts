@@ -77,7 +77,7 @@ export class AppComponent implements AfterViewInit, OnInit{
       name: "Portfolio Application",
       desc: "My professional portfolio webapp",
       skills: ["Angular", "HTML", "CSS", "Bootstrap"],
-      ref: "#",
+      ref: "https://thesrishtisharma.vercel.app/",
       img: this.imgDir + "myPortfolio.png"
     },
     {
