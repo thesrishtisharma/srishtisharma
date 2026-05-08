@@ -21,7 +21,7 @@ export const colors = {
         blockHeading: "#00FFFF",
     },
     lightMode: {
-        navBar: "#F1EDFF",
+        navBar: "#FFF",
         navText: "#0f1729",
         toggleLabel: "#DFDEE3",
         blockHeading: "#0F0054",

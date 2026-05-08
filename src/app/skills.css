@@ -17,6 +17,13 @@
     margin-right: 5%;
 }
 
+.skill-book{
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
 /* For desktop: */
 @media screen and (min-width: 1000px){
     #education-tab{
