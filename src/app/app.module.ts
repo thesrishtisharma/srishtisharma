@@ -11,20 +11,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 import { CdkDrag } from '@angular/cdk/drag-drop'
+import { ExpRoadComponent } from './ExpRoad/exp-road/exp-road.component';
+import { SkillBookComponent } from './SkillBook/skill-book/skill-book.component';
+import { ProjectCarouselComponent } from './project-carousel/project-carousel/project-carousel.component';
 
 @NgModule({ 
     declarations: [
         AppComponent,
+        // ExpRoadComponent,
+        // SkillBookComponent,
+        // ProjectCarouselComponent
     ],
     bootstrap: [AppComponent], 
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        MatSlideToggleModule,
-        MatIconModule,
-        MatButtonModule,
-        CdkDrag
-    ], 
-    providers: [provideHttpClient(withInterceptorsFromDi())] })
-export class AppModule { }
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MatSlideToggleModule,
+    MatIconModule,
+    MatButtonModule,
+    CdkDrag,
+    ProjectCarouselComponent
+]}) 
+export class AppModule {}

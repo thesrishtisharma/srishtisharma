@@ -1,12 +1,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-<script>
-    // const checkbox = document.getElementById("checkbox");
-    // checkbox.addEventListener("change", () => {
-    //     document.body.classList.toggle("dark")
-    // })
-</script>
 <div id="screen" style="scroll-behavior: smooth;" [style.backgroundColor]="currentTheme.navBar">
     <!-- navbar -->
     <div @fade id="navBar">
@@ -19,12 +13,6 @@
                     <img [src]="'../assets/images/logo/UpdatedLogo.png'" id="logo-img">
                 </a>
             </li>
-            <!-- <li><mat-slide-toggle id="dark-mode-toggle"
-                #darkModeSwitch
-                (change)="changeTheme()"
-                [checked]="checked"
-                [disabled]="disabled">
-            </mat-slide-toggle></li> -->
             <li>
                 <input #themeSelector type="checkbox" class="checkbox" id="checkbox" (change)="setCurrentTheme($event)">
                 <label for="checkbox" class="checkbox-label" [style.backgroundColor]="currentTheme.toggleLabel">
@@ -99,7 +87,7 @@
      <div @slideY id="exp" [style.backgroundColor]="currentTheme.navBar">
         <div class="container">
             <h2 class="jura-copyright" [style.color]="currentTheme.blockHeading" 
-                [style.borderBottom]="'1px solid '+currentTheme.blockHeading">Where have I worked:</h2>
+                [style.borderBottom]="'1px solid '+currentTheme.blockHeading">Where have I worked</h2>
         </div>
         <div class="container experience">
             <img class="exp-road" src="../assets/images/ExpRoad.png">
@@ -135,7 +123,6 @@
         </section>
     </div>
 
-    <app-project-carousel></app-project-carousel>
 
     <!-- Copyrights -->
     <div @slideY id="copyrights" [style.backgroundColor]="currentTheme.navBar">  <!--*ngIf="smallScreen"-->
@@ -154,6 +141,6 @@
         </div>
     </div> -->
     
-
+    
     <router-outlet></router-outlet>
 </div>

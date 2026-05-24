@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Shooting Star Roadmap</title>
+    <style>
+        :root {
+            --sky-color: #090a0f;
+            --road-grey: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, var(--sky-color) 100%);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- SHOOTING STARS CSS --- */
+        .star-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            transform: rotateZ(45deg);
+        }
+
+        .star {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+            filter: drop-shadow(0 0 6px #699bff);
+            animation: shooting 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes shooting {
+            0% { width: 0; opacity: 0; transform: translateX(0); }
+            10% { width: 100px; opacity: 1; }
+            100% { width: 0; opacity: 0; transform: translateX(800px); }
+        }
+
+        /* --- ROADMAP CSS --- */
+        /* .roadmap-stage {
+            position: relative;
+            width: 95%;
+            max-width: 1000px;
+            aspect-ratio: 1000 / 450;
+            perspective: 1000px;
+            z-index: 10;
+        }
+
+        .road-wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotateX(30deg);
+            transform-origin: bottom;
+        }
+
+        .road-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 20px 15px rgba(0,0,0,0.5));
+        }
+
+        .milestone {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translate(-50%, -100%);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .milestone:hover {
+            transform: translate(-50%, -110%) scale(1.2);
+            z-index: 50;
+        }
+
+        .logo-label {
+            background: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: clamp(12px, 1.5vw, 16px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: #333;
+        }
+
+        .pin {
+            width: clamp(25px, 4vw, 45px);
+            height: clamp(25px, 4vw, 45px);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            border: 2px solid white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+        }
+
+        /* Placements based on image_19ea3d.jpg */
+        /* .m1 { top: 58%; left: 20%; }
+        .m2 { top: 46%; left: 45%; }
+        .m3 { top: 25%; left: 58%; }
+        .m4 { top: 18%; left: 82%; }
+
+        @media (max-width: 650px) {
+            .roadmap-stage { aspect-ratio: 1 / 1.2; perspective: none; }
+            .road-wrapper { transform: none; }
+            .m1 { top: 80%; left: 25%; }
+            .m2 { top: 60%; left: 75%; }
+            .m3 { top: 35%; left: 25%; }
+            .m4 { top: 15%; left: 75%; }
+        } */ 
+    </style>
+</head>
+<body>
+
+    <!-- Shooting Stars Layer -->
+    <div class="star-container" id="star-container"></div>
+
+    <!-- Roadmap Layer -->
+    <!-- <div class="roadmap-stage">
+        <div class="road-wrapper">
+            <svg class="road-svg" viewBox="0 0 1000 450" fill="none">
+                <path d="M-50 400 C 300 400, 200 150, 500 250 S 700 50, 1050 150" 
+                      stroke="#222" stroke-width="85" stroke-linecap="round" />
+                <path d="M-50 400 C 300 400, 200 150, 500 250 S 700 50, 1050 150" 
+                      stroke="white" stroke-width="4" stroke-dasharray="30, 25" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <div class="milestone m1">
+            <div class="logo-label">HBK</div>
+            <div class="pin" style="background: #73b3c3;"></div>
+        </div>
+
+        <div class="milestone m2">
+            <div class="logo-label">IBM</div>
+            <div class="pin" style="background: #5aa9e6;"></div>
+        </div>
+
+        <div class="milestone m3">
+            <div class="logo-label">Wipro</div>
+            <div class="pin" style="background: #ff7e67;"></div>
+        </div>
+
+        <div class="milestone m4">
+            <div class="logo-label">MOSPI</div>
+            <div class="pin" style="background: #90a4ae;"></div>
+        </div>
+    </div> -->
+
+    
+</body>
+</html>
