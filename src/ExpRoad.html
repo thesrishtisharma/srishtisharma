@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --road-color: #333;
+            --line-color: #fff;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .roadmap-container {
+            position: relative;
+            width: 900px;
+            height: 400px;
+            /* This gives the 3D perspective effect */
+            transform: perspective(1000px) rotateX(20deg);
+        }
+
+        .road-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* The Milestone Pins */
+        .milestone {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translate(-50%, -100%); /* Centers pin on the spot */
+            transition: transform 0.3s ease;
+        }
+
+        .milestone img{
+            transform: translate(-48px, 10px);
+            scale: 1.5;
+        }
+
+        .milestone:hover {
+            transform: translate(-50%, -110%) scale(1.8);
+        }
+
+        .logo {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 5px;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+        }
+
+        .pin {
+            background-color: #3498db;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            border: 2px solid white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Specific positions based on the image curve */
+        .pos-1 { top: 65%; left: 20%; }
+        .pos-2 { top: 45%; left: 40%; }
+        .pos-3 { top: 52%; left: 65%; }
+        .pos-4 { top: 25%; left: 80%; }
+
+        /* Pins will have different heights */
+        .pos-1 .pin {
+            width: 35px;
+            height: 35px;
+        }
+        .pos-2 .pin {
+            width: 28px;
+            height: 28px;
+        }
+        .pos-3 .pin {
+            width: 23px;
+            height: 23px;
+        }
+        .pos-4 .pin {
+            width: 18px;
+            height: 18px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="roadmap-container">
+    <!-- Road Graphic -->
+    <svg class="road-svg" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main Asphalt -->
+        <path d="M0 350 C 200 350, 200 150, 400 250 S 600 50, 800 150" 
+              stroke="#333" stroke-width="60" stroke-linecap="round" />
+        <!-- White Dashed Line -->
+        <path d="M0 350 C 200 350, 200 150, 400 250 S 600 50, 800 150" 
+              stroke="white" stroke-width="4" stroke-dasharray="20, 15" stroke-linecap="round" />
+    </svg>
+
+    <!-- Milestone 1 -->
+    <div class="milestone pos-1">
+        <img src="assets/images/hbk.png" alt="HBK" class="logo">
+        <div class="pin" style="background-color: #6fb9c0;"></div>
+    </div>
+
+    <!-- Milestone 2 -->
+    <div class="milestone pos-2">
+        <img src="assets/images/ibm.png" alt="IBM" class="logo">
+        <div class="pin" style="background-color: #5eaefd;"></div>
+    </div>
+
+    <!-- Milestone 3 -->
+    <div class="milestone pos-3">
+        <img src="assets/images/wipro.png" alt="Wipro" class="logo">
+        <div class="pin" style="background-color: #f17b7b;"></div>
+    </div>
+
+    <!-- Milestone 4 -->
+    <div class="milestone pos-4">
+        <img src="assets/images/mospi.svg" alt="Gov" class="logo">
+        <div class="pin" style="background-color: #97a7eb;"></div>
+    </div>
+</div>
+
+</body>
+</html>
