@@ -1,49 +1,65 @@
 <!-- Top ANBU Navigation -->
 <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     <!-- Logo / Brand Trigger -->
     <div class="flex items-center space-x-3 cursor-pointer" (click)="toggleSharingan()">
-      <div class="w-8 h-8 rounded-full border-2 border-sky-400 flex items-center justify-center bg-sky-950/40 relative overflow-hidden">
+      <div class="w-8 h-8 rounded-full border-2 border-sky-400 flex items-center justify-center bg-sky-950/40 relative overflow-hidden shrink-0">
         <div class="w-3 h-3 bg-sky-400 rounded-full animate-ping"></div>
       </div>
-      <span class="font-bold tracking-widest text-sky-400 font-mono">SRISHTI.DEV</span>
+      <span class="font-bold tracking-widest text-sky-400 font-mono text-sm sm:text-base">SRISHTI.DEV</span>
     </div>
     
-    <!-- Navigation Links -->
-    <nav class="hidden md:flex space-x-8 text-sm font-mono text-slate-300">
+    <!-- Desktop Navigation Links -->
+    <nav *ngIf="!mobileScreen" class="hidden md:flex space-x-8 text-sm font-mono text-slate-300">
       <a href="#chidori" class="hover:text-sky-400 transition-colors">01. CHIDORI</a>
       <a href="#scrolls" class="hover:text-red-500 transition-colors">02. SCROLLS</a>
       <a href="#skills" class="hover:text-amber-500 transition-colors">03. SHARINGAN</a>
       <a href="#missions" class="hover:text-blue-500 transition-colors">04. MISSIONS</a>
     </nav>
+
+    <!-- Mobile Menu Button Trigger -->
+    <button (click)="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path *ngIf="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path *ngIf="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div *ngIf="mobileMenuOpen" class="md:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-4 flex flex-col space-y-4 font-mono text-sm text-slate-300 shadow-xl backdrop-blur-lg">
+    <a (click)="scrollToSection('chidori')" class="hover:text-sky-400 transition-colors">01. CHIDORI</a>
+    <a (click)="scrollToSection('scrolls')" class="hover:text-red-500 transition-colors">02. SCROLLS</a>
+    <a (click)="scrollToSection('skills')" class="hover:text-amber-500 transition-colors">03. SHARINGAN</a>
+    <a (click)="scrollToSection('missions')" class="hover:text-blue-500 transition-colors">04. MISSIONS</a>
   </div>
 </header>
 
 <!-- Top Right Popup Notification -->
 <div *ngIf="showNotification()" 
-     class="fixed top-15 right-6 z-50 flex items-center gap-3 px-5 py-3 bg-slate-950/90 border border-sky-500/50 text-white rounded-xl shadow-2xl backdrop-blur-md animate-bounce-in transition-all duration-300">
+     class="fixed top-20 right-4 sm:right-6 left-4 sm:left-auto z-50 flex items-center gap-3 px-4 sm:px-5 py-3 bg-slate-950/90 border border-sky-500/50 text-white rounded-xl shadow-2xl backdrop-blur-md animate-bounce-in transition-all duration-300">
   
   <!-- Icon or Accent -->
   <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse shrink-0"></span>
   
-  <p class="font-mono text-xs tracking-wider text-slate-200 m-0">
+  <p class="font-mono text-xs tracking-wider text-slate-200 m-0 flex-1">
     {{ notificationMessage() }}
   </p>
 
   <!-- Optional Close Button -->
-  <button (click)="showNotification.set(false)" class="ml-2 text-slate-400 hover:text-white font-mono text-xs flex items-center justify-center">
+  <button (click)="showNotification.set(false)" class="ml-2 text-slate-400 hover:text-white font-mono text-xs flex items-center justify-center shrink-0">
     ✕
   </button>
 </div>
 
 <!-- 1. HERO SECTION: KAKASHI CHARACTER & ANIMATED CHIDORI AURA -->
-<section id="chidori" class="min-h-screen flex flex-col items-center justify-center relative px-6 pt-28 pb-16 overflow-hidden text-center bg-slate-950 text-slate-100">
+<section id="chidori" class="min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 pt-28 pb-16 overflow-hidden text-center bg-slate-950 text-slate-100">
     
-    <!-- Dynamic Background: Flashes with lightning when Chidori is active, calm when inactive -->
+    <!-- Dynamic Background -->
     <div class="absolute inset-0 bg-cover bg-center transition-all duration-700 pointer-events-none"
-            [ngClass]="sharinganActive() ? 'opacity-35 animate-lightning filter brightness-125 contrast-125' : 'opacity-25 filter brightness-90'"
-            style="background-image: url('assets/kakashi.jpg');"></div>
-            
+         [ngClass]="sharinganActive() ? 'opacity-35 animate-lightning filter brightness-125 contrast-125' : 'opacity-25 filter brightness-90'"
+         style="background-image: url('assets/kakashi.jpg');"></div>
+         
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/60 via-slate-950/90 to-slate-950 pointer-events-none"></div>
     
     <!-- Cinematic Eyelid Effect Overlay on Landing -->
@@ -53,14 +69,14 @@
     <div class="z-10 max-w-3xl w-full flex flex-col items-center mx-auto" [@sharinganPulse]="sharinganActive() ? 'active' : 'dormant'">
         
         <!-- ANIMATED KAKASHI CHIDORI AVATAR -->
-        <div class="relative w-40 h-40 mx-auto mb-6 cursor-pointer group" (click)="cycleQuote()">
+        <div class="relative w-36 h-36 sm:w-40 sm:h-40 mx-auto mb-6 cursor-pointer group" (click)="cycleQuote()">
             
             <!-- Outer Electric Chakra Aura Layer -->
             <div class="absolute -inset-3 rounded-full bg-sky-500/30 blur-md animate-lightning pointer-events-none"></div>
 
             <!-- Main Image Container with Pulsing Chidori Glow -->
             <div class="absolute inset-0 rounded-full border-2 border-sky-400 bg-slate-900 shadow-2xl overflow-hidden flex items-center justify-center animate-chidori">
-            <img src="assets/images/SrishtiSharma_Formal.png" alt="Kakashi Hatake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <img src="assets/images/SrishtiSharma_Formal.png" alt="Kakashi Hatake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
             <!-- Spark Overlay Effect -->
@@ -72,22 +88,22 @@
         </div>
 
         <!-- Interactive Speech Bubble -->
-        <div class="mt-4 mb-6 px-6 py-2.5 rounded-2xl bg-slate-900/90 border border-slate-700 text-slate-300 font-mono text-xs max-w-md shadow-lg relative">
-        <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-slate-900 border-t border-l border-slate-700 rotate-45"></div>
-        "{{ currentQuote() }}"
+        <div class="mt-4 mb-6 px-4 sm:px-6 py-2.5 rounded-2xl bg-slate-900/90 border border-slate-700 text-slate-300 font-mono text-xs max-w-sm sm:max-w-md shadow-lg relative">
+          <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-slate-900 border-t border-l border-slate-700 rotate-45"></div>
+          "{{ currentQuote() }}"
         </div>
         
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 font-mono">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-4 font-mono">
         SRISHTI <span class="text-sky-400">SHARMA</span>
         </h1>
 
-        <div class="inline-block px-4 py-1.5 mb-4 rounded-full border border-sky-500/40 bg-sky-950/20 text-white-400 font-mono text-xs tracking-widest uppercase">
-            Software Engineer • Full-Stack Developer <br>
+        <div class="inline-block px-4 py-2 mb-4 rounded-full border border-sky-500/40 bg-sky-950/20 text-slate-200 font-mono text-[11px] sm:text-xs tracking-wider uppercase text-center leading-relaxed">
+            Software Engineer • Full-Stack Developer <br class="block sm:hidden">
             <b>Total Experience: {{exp.exYear}} years • {{exp.exMonths}} month(s) • {{exp.exDays}} day(s)</b>
         </div>
         
-        <div class="flex flex-col items-center gap-6 mt-4">
-            <div class="flex items-center justify-center gap-3">
+        <div class="flex flex-col items-center gap-6 mt-4 w-full">
+            <div class="flex flex-wrap items-center justify-center gap-3">
                 <!-- LinkedIn Tile -->
                 <a href="https://www.linkedin.com/in/the-srishti-sharma" target="_blank" rel="noopener noreferrer" 
                 aria-label="LinkedIn"
@@ -124,12 +140,11 @@
                 </a>
             </div>
 
-            <div class="flex items-center gap-4">
-            <!-- <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto"> -->
-                <button (click)="toggleSharingan()" class="px-8 py-3.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-mono tracking-wider font-semibold transition-all shadow-lg shadow-sky-900/30">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <button (click)="toggleSharingan()" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-mono tracking-wider font-semibold transition-all shadow-lg shadow-sky-900/35">
                     {{ sharinganActive() ? 'Calm Chakra' : 'Channel Chidori' }}
                 </button>
-                <a href="#scrolls" class="px-8 py-3.5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 font-mono tracking-wider font-semibold transition-all">
+                <a href="#scrolls" class="w-full sm:w-auto text-center px-8 py-3.5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 font-mono tracking-wider font-semibold transition-all">
                     View Scrolls
                 </a>
             </div>
@@ -138,9 +153,9 @@
 </section>
 
 <!-- 2. PROJECTS / HIDDEN SCROLLS SECTION -->
-<section id="scrolls" class="py-24 px-6 relative overflow-hidden border-t border-sky-900/30 text-slate-100">
+<section id="scrolls" class="py-20 sm:py-24 px-4 sm:px-6 relative overflow-hidden border-t border-sky-900/30 text-slate-100">
 
-    <!-- Animated Background Image Layer switching between kakashi.jpg and download.jpg -->
+    <!-- Animated Background Image Layer -->
     <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 pointer-events-none"
             [ngClass]="sharinganActive() ? 'opacity-30 filter brightness-110 contrast-125 scale-105' : 'opacity-20 filter brightness-90 contrast-100 scale-100'"
             [style.background-image]="currentBgImage"></div>
@@ -149,7 +164,7 @@
     <div class="absolute inset-0 bg-slate-950/90 pointer-events-none"></div>
 
     <!-- Ambient background lighting -->
-    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-sky-600/10 blur-[140px] pointer-events-none rounded-full"></div>
+    <div class="absolute top-1/3 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-sky-600/10 blur-[140px] pointer-events-none rounded-full"></div>
 
     <div class="max-w-6xl mx-auto flex flex-col items-center relative z-10">
         
@@ -162,23 +177,23 @@
             HIDDEN <span class="text-sky-400">SCROLLS</span>
         </h2>
         
-        <p class="text-slate-400 text-sm md:text-base max-w-xl text-center mb-16 leading-relaxed">
+        <p class="text-slate-400 text-sm md:text-base max-w-xl text-center mb-12 sm:mb-16 leading-relaxed px-2">
             A collection of high-ranking web applications, component architectures, and systems deployed across the digital landscape. Click any scroll to unroll details.
         </p>
 
-        <!-- Projects Grid (Powered by the displayedProjects computed signal) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
         
         <div *ngFor="let p of displayedProjects(); let i = index" 
-            class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl backdrop-blur-md flex flex-col justify-between group hover:border-sky-500/50 transition-all duration-300 cursor-pointer"
+            class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md flex flex-col justify-between group hover:border-sky-500/50 transition-all duration-300 cursor-pointer"
             (click)="toggleProject(i)">
             <div>
             <div class="flex items-center justify-between mb-4">
-                <span class="font-mono text-xs text-sky-400 bg-sky-950/40 px-3 py-1 rounded-full border border-sky-500/30">{{ p.category }}</span>
+                <span class="font-mono text-[11px] sm:text-xs text-sky-400 bg-sky-950/40 px-3 py-1 rounded-full border border-sky-500/30">{{ p.category }}</span>
                 <span class="text-slate-500 font-mono text-xs">{{ p.isOpen ? '[Collapse]' : '[View More]' }}</span>
             </div>
             
-            <h3 class="text-xl font-mono font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">{{ p.title }}</h3>
+            <h3 class="text-lg sm:text-xl font-mono font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">{{ p.title }}</h3>
             
             <!-- Unroll Animation Container -->
             <div [@scrollUnroll]="p.isOpen ? 'open' : 'closed'">
@@ -188,8 +203,8 @@
             </div>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between mt-4">
-            <div class="flex gap-2 font-mono text-[10px] text-slate-400">
+            <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 mt-4">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-slate-400">
                 <span *ngFor="let t of p.tech" class="bg-slate-950 px-2 py-1 rounded border border-slate-800">{{ t }}</span>
             </div>
             <a [href]="p.link" target="_blank" (click)="$event.stopPropagation()" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1 transition-colors">
@@ -201,7 +216,7 @@
         </div>
 
         <!-- EXPLORE MORE / UNROLL MORE SCROLLS BUTTON -->
-        <div class="text-center mt-12">
+        <div class="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button *ngIf="hasMoreProjects()" (click)="loadMoreProjects()" class="px-8 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-sky-500/40 text-sky-400 font-mono text-xs font-bold tracking-widest shadow-[0_0_20px_rgba(56,189,248,0.15)] hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all duration-300">
                 [ UNROLL MORE SCROLLS ] ▼
             </button>
@@ -215,16 +230,15 @@
     </div>
 </section>
 
-<!-- SKILLS & EDUCATION SECTION WITH TOP-CENTERED SHARINGAN REVEAL -->
-<!-- COMPACT SINGLE-SCREEN SECTION: SKILLS, EDUCATION & CERTIFICATES -->
+<!-- SKILLS & EDUCATION SECTION -->
 <section id="skills" 
-         class="py-12 px-6 relative overflow-hidden bg-slate-950 border-t border-sky-900/30 text-slate-100 flex flex-col items-center justify-center min-h-screen"
+         class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden bg-slate-950 border-t border-sky-900/30 text-slate-100 flex flex-col items-center justify-center min-h-screen"
          (mouseenter)="onSectionHoverOrEnter()">
   
   <div class="max-w-6xl mx-auto flex flex-col items-center w-full relative z-20">
     
     <!-- COMPACT TOP SHARINGAN CIRCLE -->
-    <div class="relative w-32 h-32 mx-auto mb-4 cursor-pointer group" (click)="onSectionHoverOrEnter()">
+    <div class="relative w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-4 cursor-pointer group" (click)="onSectionHoverOrEnter()">
         
         <!-- Outer Glow Aura -->
         <div class="absolute -inset-3 rounded-full bg-red-500/20 blur-lg pointer-events-none transition-opacity duration-700" 
@@ -291,9 +305,9 @@
         
         <div class="space-y-3">
           <div *ngFor="let edu of educationList()" class="border-l-2 border-red-500/40 pl-3 py-1">
-            <div class="flex justify-between items-start mb-1">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-start mb-1 gap-1">
               <h4 class="font-mono font-semibold text-white text-xs">{{ edu.degree }}</h4>
-              <span class="text-[10px] font-mono text-red-400 bg-red-950/40 px-1.5 py-0.5 rounded border border-red-500/30 whitespace-nowrap">{{ edu.period }}</span>
+              <span class="text-[10px] font-mono text-red-400 bg-red-950/40 px-1.5 py-0.5 rounded border border-red-500/30 whitespace-nowrap w-fit">{{ edu.period }}</span>
             </div>
             <p class="text-[11px] font-mono text-slate-400">{{ edu.institution }}</p>
           </div>
@@ -308,9 +322,9 @@
         
         <div class="space-y-3">
           <div *ngFor="let cert of certificatesList()" class="border-l-2 border-red-500/40 pl-3 py-1">
-            <div class="flex justify-between items-start mb-1">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-start mb-1 gap-1">
               <h4 class="font-mono font-semibold text-white text-xs">{{ cert.title }}</h4>
-              <span class="text-[10px] font-mono text-red-400 bg-red-950/40 px-1.5 py-0.5 rounded border border-red-500/30 whitespace-nowrap">{{ cert.year }}</span>
+              <span class="text-[10px] font-mono text-red-400 bg-red-950/40 px-1.5 py-0.5 rounded border border-red-500/30 whitespace-nowrap w-fit">{{ cert.year }}</span>
             </div>
             <p class="text-[11px] font-mono text-slate-400">{{ cert.issuer }}</p>
           </div>
@@ -322,32 +336,31 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="missions" class="py-20 bg-slate-950 relative overflow-hidden border-t border-sky-900/20">
+<!-- EXPERIENCE / MISSIONS MAP -->
+<section id="missions" class="py-16 sm:py-20 bg-slate-950 relative overflow-hidden border-t border-sky-900/20">
   
-  <!-- Background Ninja World Grid / Watermark Elements -->
+  <!-- Background Ninja World Grid -->
   <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto px-4 relative z-10">
     
     <!-- Section Header -->
-    <div class="text-center mb-12">
+    <div class="text-center mb-10 sm:mb-12">
       <h2 class="text-3xl md:text-4xl font-black text-white font-mono tracking-wider">
         <span class="text-red-600">MISSIONS</span> MAP
       </h2>
     </div>
 
     <!-- Map Container -->
-    <div class="relative w-full h-[500px] md:h-[600px] rounded-2xl bg-slate-900/80 border border-red-900/30 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] flex items-center justify-center">
+    <div class="relative w-full h-[450px] sm:h-[500px] md:h-[600px] rounded-2xl bg-slate-900/80 border border-red-900/30 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] flex items-center justify-center">
       
-      <!-- Parchment / Ninja World Map Background Image or Texture Styling -->
+      <!-- Parchment Background Image -->
       <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity" style="background-image: url('assets/images/map.jpg');"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80"></div>
 
-      <!-- Map Grid Overlay Lines (Optional Decorative HUD) -->
       <div class="absolute inset-4 border border-dashed border-red-500/10 pointer-events-none grid grid-cols-2 grid-rows-2"></div>
 
-      <!-- Mission Map Pins (Looping through the 4 companies) -->
+      <!-- Mission Map Pins -->
       <div *ngFor="let mission of missions" 
            class="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group"
            [style.left.%]="mission.coordinates.x"
@@ -358,39 +371,39 @@
         <span class="absolute -inset-2 rounded-full animate-ping opacity-75" [ngClass]="mission.status === 'ACTIVE' ? 'bg-emerald-500/40' : 'bg-red-500/40'"></span>
         
         <!-- Pin Button -->
-        <div class="relative w-10 h-10 rounded-full bg-slate-950 border-2 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300" [ngClass]="mission.status === 'ACTIVE' ? 'border-emerald-600' : 'border-red-600'">
+        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-950 border-2 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300" [ngClass]="mission.status === 'ACTIVE' ? 'border-emerald-600' : 'border-red-600'">
           <span class="font-mono text-[10px] font-bold" [ngClass]="mission.status === 'ACTIVE' ? ' text-emerald-400' : ' text-red-400'">{{ mission.rank[0] }}</span>
         </div>
 
-        <!-- Tooltip Label on Hover -->
-        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block z-30 whitespace-nowrap bg-slate-900 border border-red-900/60 px-3 py-1 rounded shadow-xl font-mono text-xs text-slate-200">
+        <!-- Tooltip Label on Hover (Hidden on touch devices for usability) -->
+        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden md:group-hover:block z-30 whitespace-nowrap bg-slate-900 border border-red-900/60 px-3 py-1 rounded shadow-xl font-mono text-xs text-slate-200">
           <span class="text-red-400 font-bold">{{ mission.company }}</span> <br>
           <span class="text-[10px] text-slate-400">{{ mission.village }}</span>
         </div>
       </div>
 
-      <!-- Mission Intel Panel (Bottom or Side Popup when a pin is clicked) -->
-      <div *ngIf="selectedMission() as m" class="bottom-4 inset-x-4 md:inset-x-12 bg-slate-950/90 border border-red-600/50 backdrop-blur-md p-6 rounded-xl shadow-2xl z-20 animate-fade-in">
+      <!-- Mission Intel Panel -->
+      <div *ngIf="selectedMission() as m" class="bottom-4 inset-x-3 sm:inset-x-6 md:inset-x-12 bg-slate-950/95 border border-red-600/50 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-2xl z-20 animate-fade-in max-h-[80%] overflow-y-auto">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <div class="flex items-center gap-3 mb-1">
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
               <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-red-950 text-red-400 border border-red-800">{{ m.rank }}</span>
               <span class="font-mono text-xs text-slate-400">📍 {{ m.village }}</span>
               <span class="font-mono text-xs text-sky-400">⏳ {{ m.duration }}</span>
             </div>
-            <h3 class="text-lg font-bold text-white font-mono">{{ m.title }}</h3>
+            <h3 class="text-base sm:text-lg font-bold text-white font-mono">{{ m.title }}</h3>
             <p class="text-red-400 font-mono text-xs font-semibold mt-0.5">{{ m.company }}</p>
-            <p class="text-slate-300 font-sans text-sm mt-2 whitespace-pre-line max-w-2xl">{{ m.description }}</p>
+            <p class="text-slate-300 font-sans text-xs sm:text-sm mt-2 whitespace-pre-line max-w-2xl">{{ m.description }}</p>
           </div>
-          <button (click)="selectedMission.set(null)" class="self-start md:self-center px-3 py-1.5 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-white font-mono text-xs">
+          <button (click)="selectedMission.set(null)" class="self-start md:self-center px-3 py-1.5 rounded bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-white font-mono text-xs shrink-0">
             [ CLOSE INTEL ]
           </button>
         </div>
       </div>
 
       <!-- Default Prompt if No Pin Clicked -->
-      <div *ngIf="!selectedMission()" class="absolute bottom-6 bg-slate-900/80 border border-slate-800 px-4 py-2 rounded-full text-center pointer-events-none">
-        <span class="font-mono text-xs text-slate-400">👆 Click any mission marker on the map to inspect logs</span>
+      <div *ngIf="!selectedMission()" class="absolute bottom-6 bg-slate-900/80 border border-slate-800 px-4 py-2 rounded-full text-center pointer-events-none mx-4">
+        <span class="font-mono text-[11px] sm:text-xs text-slate-400">👆 Click any mission marker on the map to inspect logs</span>
       </div>
 
     </div>
@@ -399,9 +412,9 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 bg-slate-950 border-t border-sky-900/20 text-center font-mono text-xs text-slate-500">
-    <p>© 2026 Srishti Sharma. All rights reserved.<br>
-        Additional Credits and Inspirations from <span><a href="https://in.pinterest.com/search/pins/?q=kakashi%20hatake&rs=ac&len=9&source_id=ac_Q4pLtlou&eq=kakashe%20H&etslf=2063" target="_blank" rel="noopener noreferrer">Kakashi Hatake</a>.</span>
+<footer class="py-10 sm:py-12 bg-slate-950 border-t border-sky-900/20 text-center font-mono text-xs text-slate-500 px-4">
+    <p>© 2026 Srishti Sharma. All rights reserved.<br class="block sm:hidden">
+        Additional Credits and Inspirations from <span><a href="https://in.pinterest.com/search/pins/?q=kakashi%20hatake&rs=ac&len=9&source_id=ac_Q4pLtlou&eq=kakashe%20H&etslf=2063" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors">Kakashi Hatake</a>.</span>
     </p>
 </footer>
 
