@@ -49,6 +49,8 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {}
 
+  mobileScreen = window.innerWidth < 768; // Check if the screen width is less than 768px
+  mobileMenuOpen = false;
   eyeState = signal('closed');
   sharinganActive = signal(true);
   isFlashing = signal(false);
@@ -177,5 +179,16 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.showNotification.set(false);
     }, 5000);
+  }
+
+  scrollToSection(sectionId: string) {
+    // Close the mobile menu
+    this.mobileMenuOpen = false;
+
+    // Find the target element and scroll smoothly
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

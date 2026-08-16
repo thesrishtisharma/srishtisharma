@@ -36,7 +36,6 @@ export const missions: Mission[] = [
         • Designed and developed microservices and front-end of the application
         • Developed additional libraries that can be imported in other microservices as jars
         • Managed database, maintained code versions using Git, 
-        • Mock unit test cases for module functionalities
         • Upgraded from Java 8 to Java 21 
         • Migrated microservices from J2EE to Spring Boot Applications
         • Prepared HLDs and LLDs, and integrated APIs to enhance application performance
@@ -56,11 +55,6 @@ export const missions: Mission[] = [
         • Created sequence diagrams using Plant UML explaining step by step consumption of the APIs
         • Developed a product (POC) to connect any HTTP Client with Anaplan (SaaS)  via Google Cloud Platform
         • Also created high level design and low level design documentations for the connector.
-
-        • Additionally worked as a Senior Technical Support Engineer (2019 - 2020)
-            - Worked with Dell EMC’s CAS Storage (Centera – Linux server) for customer channel and escalations
-            - Responsible for providing root case analysis for any software related issue
-            - Helped colleagues with their case reviews and technical guidance along with providing knowledge transfers
       `,
       status: 'COMPLETED',
       coordinates: { x: 20, y: 75 }
