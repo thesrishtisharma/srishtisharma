@@ -8,6 +8,7 @@ import { skillCategories } from './utils/Skills';
 import { educationList } from './utils/Education';
 import { certificatesList } from './utils/Certifications';
 import { Mission, missions } from './utils/Missions';
+import { menuOptions } from './utils/MenuOptions';
 
 @Component({
   selector: 'app-root',
@@ -49,6 +50,7 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {}
 
+  menuOptions = menuOptions;
   mobileScreen = window.innerWidth < 768; // Check if the screen width is less than 768px
   mobileMenuOpen = false;
   eyeState = signal('closed');

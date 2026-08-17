@@ -19,11 +19,11 @@ export const missions: Mission[] = [
       village: 'Chennai, Tamil Nadu',
       duration: '2026 - Present',
       description: `
-        - Developing and scaling Aqira - a cloud native application designed for sensor testing and engineering analysis
-        - Building robust web-based solution that enables aeronautical and automotive leaders to process and visualise volumes of data
+        • Developing and scaling Aqira, a cloud native app designed for sensor testing and engineering analysis
+        • Building robust web-based solution that enables aeronautical and automotive leaders to process & visualise volumes of data
       `,
       status: 'ACTIVE',
-      coordinates: { x: 50, y: 40 }
+      coordinates: { x: 80, y: 67 }
     },
     {
       id: 'm2',
@@ -41,7 +41,7 @@ export const missions: Mission[] = [
         • Prepared HLDs and LLDs, and integrated APIs to enhance application performance
         `,
       status: 'COMPLETED',
-      coordinates: { x: 80, y: 50 }
+      coordinates: { x: 40, y: 58 }
     },
     {
       id: 'm3',
@@ -57,7 +57,7 @@ export const missions: Mission[] = [
         • Also created high level design and low level design documentations for the connector.
       `,
       status: 'COMPLETED',
-      coordinates: { x: 20, y: 65 }
+      coordinates: { x: 21, y: 45 }
     },
     {
       id: 'm3',
@@ -72,7 +72,7 @@ export const missions: Mission[] = [
         • Helped colleagues with their case reviews and technical guidance along with providing knowledge transfers
       `,
       status: 'COMPLETED',
-      coordinates: { x: 23, y: 73 }
+      coordinates: { x: 16, y: 43 }
     },
     {
       id: 'm4',
@@ -86,6 +86,6 @@ export const missions: Mission[] = [
         • Documented everything under the report for team to continue with the changes if required in future.
       `,
       status: 'COMPLETED',
-      coordinates: { x: 75, y: 25 }
+      coordinates: { x: 37, y: 15 }
     }
   ];
