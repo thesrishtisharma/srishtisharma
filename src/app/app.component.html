@@ -372,7 +372,7 @@
         
         <!-- Pin Button -->
         <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-950 border-2 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300" [ngClass]="mission.status === 'ACTIVE' ? 'border-emerald-600' : 'border-red-600'">
-          <span class="font-mono text-[10px] font-bold" [ngClass]="mission.status === 'ACTIVE' ? ' text-emerald-400' : ' text-red-400'">{{ mission.rank[0] }}</span>
+          <span class="font-mono text-[10px] font-bold" [ngClass]="mission.status === 'ACTIVE' ? ' text-emerald-400' : ' text-red-400'">{{setMissionRankPin(mission.rank)}}</span>
         </div>
 
         <!-- Tooltip Label on Hover (Hidden on touch devices for usability) -->
