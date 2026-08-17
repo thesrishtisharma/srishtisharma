@@ -21,10 +21,10 @@ export const projects = signal<Project[]>([
       linkText: 'Go →'
     },
     {
-      title: 'Excel to Invoice (Parsing App) - with licensing server',
+      title: 'Invoice Helper (Parsing App) - with Licensing Schemes',
       category: 'Rank-S Mission',
-      description: 'An interactive modular web application engineered with custom components, dynamic age calculations, and responsive layouts.',
-      tech: ['Java', 'Spring', 'Rest APIs', 'Oracle Cloud'],
+      description: 'An interactive desktop (GUI) application that allows users to perform categrization of data based on custom column selection at enterprise level. Has its own licensing server to manage the number of active licenses deployed on Oracle Cloud.',
+      tech: ['Java', 'Spring Boot', 'Spring Security', 'Rest APIs', 'Oracle Cloud', 'Postgresql'],
       isOpen: false,
       link: 'https://github.com',
       linkText: 'Go →'
@@ -33,7 +33,7 @@ export const projects = signal<Project[]>([
       title: 'SC Communication',
       category: 'Rank-C Mission',
       description: 'An angular based website that uses Google Cloud Storage and Firebase for storing and retrieving its unstructured data to demonstrate their work.',
-      tech: ['Angular', 'Google APIs', 'GCS'],
+      tech: ['Angular', 'Google APIs', 'Google Cloud Storage', 'Firestore DB'],
       isOpen: false,
       link: 'https://sccommunication.vercel.app',
       linkText: 'Go →'

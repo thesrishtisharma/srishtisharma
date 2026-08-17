@@ -8,8 +8,8 @@ export interface EducationItem {
 
 export const educationList = signal<EducationItem[]>([
     {
-      degree: 'Master of Technology',
-      institution: 'Birla Institute of Technology, Pilani',
+      degree: 'M.Tech in Computing Systems & Infrastructure',
+      institution: 'Birla Institute of Technology & Science, Pilani',
       period: '2019 — 2023'
     },
     {

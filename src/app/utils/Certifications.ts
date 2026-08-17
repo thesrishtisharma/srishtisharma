@@ -8,18 +8,23 @@ interface CertificateItem {
 
 export const certificatesList = signal<CertificateItem[]>([
     {
-      title: 'AI Professional',
+      title: 'Google AI Professional',
       issuer: 'Google - Coursera',
       year: '2026'
     },
     {
-      title: 'Java - Full Stack Developer',
-      issuer: 'Wipro',
-      year: '2025'
+      title: 'Google Cloud Professional Data Engineer',
+      issuer: 'Udemy',
+      year: '2022'
     },
     {
-      title: 'UX Design Professional',
-      issuer: 'Google - Coursera',
-      year: '2024'
+      title: 'Google UX Design Professional',
+      issuer: 'Coursera',
+      year: '2022'
+    },
+    {
+      title: 'Fullstack-Enterprise Java Professional',
+      issuer: 'Wipro',
+      year: '2021'
     }
 ]);
