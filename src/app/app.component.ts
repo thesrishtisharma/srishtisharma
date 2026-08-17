@@ -191,4 +191,12 @@ export class AppComponent implements OnInit {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
+  setMissionRankPin(rank: string): string{
+    if(rank[1] != '-'){
+      return rank.substring(0, 2);
+    }
+
+    return rank[0];
+  }
 }

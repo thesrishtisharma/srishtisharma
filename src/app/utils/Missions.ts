@@ -15,7 +15,7 @@ export const missions: Mission[] = [
       id: 'm1',
       title: 'Software Engineer',
       company: 'HBK - Hottinger Brüel & Kjær',
-      rank: 'S-RANK',
+      rank: 'D-RANK',
       village: 'Chennai, Tamil Nadu',
       duration: '2026 - Present',
       description: `
@@ -23,13 +23,13 @@ export const missions: Mission[] = [
         - Building robust web-based solution that enables aeronautical and automotive leaders to process and visualise volumes of data
       `,
       status: 'ACTIVE',
-      coordinates: { x: 30, y: 40 }
+      coordinates: { x: 50, y: 40 }
     },
     {
       id: 'm2',
       title: 'Application Developer',
       company: 'IBM',
-      rank: 'D-RANK',
+      rank: 'C-RANK',
       village: 'Bangalore, Karnataka',
       duration: '2024 - 2026',
       description: `
@@ -41,13 +41,13 @@ export const missions: Mission[] = [
         • Prepared HLDs and LLDs, and integrated APIs to enhance application performance
         `,
       status: 'COMPLETED',
-      coordinates: { x: 70, y: 65 }
+      coordinates: { x: 80, y: 50 }
     },
     {
       id: 'm3',
       title: 'Integration Architect',
       company: 'Wipro',
-      rank: 'C-RANK',
+      rank: 'B2-RANK',
       village: 'Bangalore, Karnataka',
       duration: '2021 - 2023',
       description: `
@@ -57,13 +57,13 @@ export const missions: Mission[] = [
         • Also created high level design and low level design documentations for the connector.
       `,
       status: 'COMPLETED',
-      coordinates: { x: 20, y: 75 }
+      coordinates: { x: 20, y: 65 }
     },
     {
       id: 'm3',
       title: 'Senior Technical Support Engineer',
       company: 'Wipro',
-      rank: 'B-RANK',
+      rank: 'B1-RANK',
       village: 'Bangalore, Karnataka',
       duration: '2019 - 2021',
       description: `
@@ -72,7 +72,7 @@ export const missions: Mission[] = [
         • Helped colleagues with their case reviews and technical guidance along with providing knowledge transfers
       `,
       status: 'COMPLETED',
-      coordinates: { x: 23, y: 83 }
+      coordinates: { x: 23, y: 73 }
     },
     {
       id: 'm4',

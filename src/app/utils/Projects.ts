@@ -21,7 +21,7 @@ export const projects = signal<Project[]>([
       linkText: 'Go →'
     },
     {
-      title: 'Packing Slip Generator',
+      title: 'Excel to Invoice (Parsing App) - with licensing server',
       category: 'Rank-S Mission',
       description: 'An interactive modular web application engineered with custom components, dynamic age calculations, and responsive layouts.',
       tech: ['Java', 'Spring', 'Rest APIs', 'Oracle Cloud'],
@@ -31,7 +31,7 @@ export const projects = signal<Project[]>([
     },
     {
       title: 'SC Communication',
-      category: 'Rank-A Mission',
+      category: 'Rank-C Mission',
       description: 'An angular based website that uses Google Cloud Storage and Firebase for storing and retrieving its unstructured data to demonstrate their work.',
       tech: ['Angular', 'Google APIs', 'GCS'],
       isOpen: false,
@@ -40,7 +40,7 @@ export const projects = signal<Project[]>([
     },
     {
       title: 'Swagger - Spring - Google APIs',
-      category: 'Rank-B Mission',
+      category: 'Rank-A Mission',
       description: 'A swagger rest API client based on Google cloud storage APIs. And a data collector services that uses the APIs and stores the specific data to database. Only users having access to the particular endpoint can now access the new API that gives result from the database.',
       tech: ['Swagger', 'Spring', 'Google APIs'],
       isOpen: false,
@@ -49,7 +49,7 @@ export const projects = signal<Project[]>([
     },
     {
       title: 'Anaplan Connector',
-      category: 'Rank-B Mission',
+      category: 'Rank-A Mission',
       description: 'An interoperability connector that connects any http client (source system) with Anaplan with the help of Google Cloud Platform (Approaches: Real time & Bulk Data).',
       tech: ['Swagger', 'Spring', 'GCP', 'Angular'],
       isOpen: false,
