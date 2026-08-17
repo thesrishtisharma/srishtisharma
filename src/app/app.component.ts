@@ -173,7 +173,7 @@ export class AppComponent implements OnInit {
   // Call this function whenever you want to trigger the popup
   triggerNotification(message: string) {
     this.notificationMessage.set(message);
-    this.showNotification.set(true);
+    this.showNotification.set(false);
 
     // Automatically hide after 5 seconds (5000 milliseconds)
     setTimeout(() => {
